@@ -40,7 +40,14 @@ group :development, :test do
   gem 'bcrypt'
   gem 'devise'
   gem 'tiddle'
+  gem 'faraday'
+  gem 'travis'
+  gem 'rubocop'
+end
 
+group :test do
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
