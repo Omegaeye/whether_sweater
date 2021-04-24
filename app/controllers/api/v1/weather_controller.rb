@@ -8,4 +8,5 @@ class Api::V1::WeatherController < ApplicationController
             render json: {data: {}}, status: 404
         end
     end  
+    
 end

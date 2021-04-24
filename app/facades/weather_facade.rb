@@ -2,24 +2,24 @@ require 'ostruct'
 
 class WeatherFacade
 
-    def self.get_forecast(city_and_state)
+    def self.get_forecast(location)
         data = OpenStruct.new({ 
             id: nil,
-            current_weather: get_current_weather(city_and_state),
-            daily_weather: get_daily_weather(city_and_state),
-            hourly_weather: get_hourly_weather(city_and_state)
+            current_weather: get_current_weather(location),
+            daily_weather: get_daily_weather(location),
+            hourly_weather: get_hourly_weather(location)
          })
     end
     
 
-    def self.get_current_weather(city_and_state)
-        forecast = get_weather(lon_and_lat(city_and_state).lon, lon_and_lat(city_and_state).lat)
+    def self.get_current_weather(location)
+        forecast = get_weather(lon_and_lat(location).lon, lon_and_lat(location).lat)
         current_weather = { 
             datetime: Time.at(forecast[:current][:dt]).to_s(:db),
             sunrise: Time.at(forecast[:current][:sunrise]).to_s(:time),
             sunset: Time.at(forecast[:current][:sunset]).to_s(:time),
-            temp: (((forecast[:current][:temp] - 273) * 1.8) + 32).round(2),
-            feels_like: (((forecast[:current][:feels_like] - 273) * 1.8) + 32).round(2),
+            temp: forecast[:current][:temp],
+            feels_like: forecast[:current][:feels_like],
             humidity: forecast[:current][:humidity].to_f,
             uvi: forecast[:current][:uvi].to_f,
             visibility: forecast[:current][:visibility].to_f,
@@ -28,12 +28,12 @@ class WeatherFacade
           }
     end
 
-    def self.get_hourly_weather(city_and_state)
-        forecast = get_weather(lon_and_lat(city_and_state).lon, lon_and_lat(city_and_state).lat)
+    def self.get_hourly_weather(location)
+        forecast = get_weather(lon_and_lat(location).lon, lon_and_lat(location).lat)
         hourly = forecast[:hourly].map do |hour|
            { 
                 time: Time.at(hour[:dt]).to_s(:time),
-                temp: (((hour[:temp] - 273) * 1.8) + 32).round(2),
+                temp: hour[:temp],
                 conditions: hour[:weather].first[:description],
                 icon: hour[:weather].first[:icon]
              }
@@ -41,15 +41,15 @@ class WeatherFacade
         hourly.first(8)
     end
 
-   def self.get_daily_weather(city_and_state)
-        forecast = get_weather(lon_and_lat(city_and_state).lon, lon_and_lat(city_and_state).lat)
+   def self.get_daily_weather(location)
+        forecast = get_weather(lon_and_lat(location).lon, lon_and_lat(location).lat)
         daily = forecast[:daily].map do |day|
            { 
                 date: Time.at(day[:dt]).to_date,
                 sunrise: Time.at(day[:sunrise]).to_s(:time),
                 sunset: Time.at(day[:sunset]).to_s(:time),
-                max_temp: (((day[:temp][:max] - 273) * 1.8) + 32).round(2),
-                min_temp: (((day[:temp][:min] - 273) * 1.8) + 32).round(2),
+                max_temp: day[:temp][:max],
+                min_temp: day[:temp][:min],
                 conditions: day[:weather].first[:description],
                 icon: day[:weather].first[:icon]
              }
@@ -58,8 +58,8 @@ class WeatherFacade
     end
     
     
-    def self.lon_and_lat(city_and_state)
-        location =  MapQuestService.get_lon_and_lat(city_and_state)
+    def self.lon_and_lat(location)
+        location =  MapQuestService.get_lon_and_lat(location)
 
         lon_and_lat ||= OpenStruct.new({ 
             lon: location[:lng],

@@ -30,8 +30,8 @@ RSpec.describe "Api::V1::Weather", type: :request do
       expect(body[:data][:attributes].keys).to eq(%i[current_weather daily_weather hourly_weather])
 
       expect(body[:data][:attributes][:current_weather][:datetime].class).to eq(String)
-      expect(body[:data][:attributes][:current_weather][:sunrise]).to eq('06:10')
-      expect(body[:data][:attributes][:current_weather][:sunset]).to eq('19:45')
+      expect(body[:data][:attributes][:current_weather][:sunrise].class).to eq(String)
+      expect(body[:data][:attributes][:current_weather][:sunset].class).to eq(String)
       expect(body[:data][:attributes][:current_weather][:temp].class).to eq(Float)
       expect(body[:data][:attributes][:current_weather][:feels_like].class).to eq(Float)
       expect(body[:data][:attributes][:current_weather][:humidity].class).to eq(Float)
@@ -41,8 +41,8 @@ RSpec.describe "Api::V1::Weather", type: :request do
       expect(body[:data][:attributes][:current_weather][:icon].class).to eq(String)
             
       expect(body[:data][:attributes][:daily_weather].first[:date].class).to eq(String)
-      expect(body[:data][:attributes][:daily_weather].first[:sunrise]).to eq('06:10')
-      expect(body[:data][:attributes][:daily_weather].first[:sunset]).to eq('19:45')
+      expect(body[:data][:attributes][:daily_weather].first[:sunrise].class).to eq(String)
+      expect(body[:data][:attributes][:daily_weather].first[:sunset].class).to eq(String)
       expect(body[:data][:attributes][:daily_weather].first[:max_temp].class).to eq(Float)
       expect(body[:data][:attributes][:daily_weather].first[:min_temp].class).to eq(Float)
       expect(body[:data][:attributes][:daily_weather].first[:conditions].class).to eq(String)
