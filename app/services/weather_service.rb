@@ -4,9 +4,10 @@ class WeatherService
     response = conn.get('/data/2.5/onecall') do |f|
       f.params['lon'] = lon
       f.params['lat'] = lat
+      f.params['units'] = 'imperial' 
+      f.params['exclude'] = 'minutely'
     end 
     parse(response)
-    
   end 
 
     private

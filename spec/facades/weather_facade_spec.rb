@@ -46,7 +46,7 @@ RSpec.describe WeatherFacade, type: :model do
 
         it "get_weather", :vcr do
             response = WeatherFacade.get_weather(-105.016, 39.612)
-            expect(response.keys).to eq(%i[lat lon timezone timezone_offset current minutely hourly daily])
+            expect(response.keys).to eq(%i[lat lon timezone timezone_offset current hourly daily])
         end
     end
   end
