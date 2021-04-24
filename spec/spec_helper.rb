@@ -12,6 +12,7 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+require 'webmock/rspec'
 require 'simplecov'
 SimpleCov.start 'rails'
 SimpleCov.add_filter ['spec', 'config', 'app/channels/application_cable', 'jobs', 'mailers']
@@ -97,3 +98,5 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+require 'webmock/rspec'

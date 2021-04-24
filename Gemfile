@@ -43,6 +43,7 @@ group :development, :test do
   gem 'faraday'
   gem 'travis'
   gem 'rubocop'
+  gem 'figaro'
 end
 
 group :test do
