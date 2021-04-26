@@ -1,19 +1,26 @@
 class CityFacade
 
-    def city_job_weather_info(location)
-        result = 
-    end
+    # def city_job_weather_info(location)
+    #     result = 
+    # end
     
 
-    def urban_jobs_salary(location)
+    def self.urban_jobs_salary(location)
+        jobs = ['Data Analyst', 'Data Scientist', 'Mobile Developer', 'QA Engineer', 'Sofware Engineer', 'Systems Administrator', 'Web Developer']
+        job_info = []
         salaries = CityService.get_salaries(location)
-        salaries.map do |salary|
-            { 
-                title: salary['job']['title'],
-                min: salary['salary_percentiles']['percentile_25'],
-                max: salary['salary_percentiles']['percentile_75']
-             }
+        jobs.each do |job|
+            salaries.map do |salary|
+                if job == salary['job']['title']
+                    job_info << { 
+                        title: salary['job']['title'],
+                        min: salary['salary_percentiles']['percentile_25'],
+                        max: salary['salary_percentiles']['percentile_75']
+                    }
+                end
+            end
         end
+        job_info
     end
     
     

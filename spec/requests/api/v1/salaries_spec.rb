@@ -24,6 +24,15 @@ RSpec.describe "Api::V1::Salaries", type: :request do
       get '/api/v1/salaries', params: valid_attributes, headers: valid_headers, as: :json
       expect(response).to be_successful
       body = JSON.parse(response.body, symbolize_names: true)
+      expect(body[:data].size).to eq(3)
+      expect(body[:data].keys).to eq(%i[id type attributes])
+      expect(body[:data][:attributes].keys).to eq(%i[destination forecast salaries])
+      expect(body[:data][:attributes][:forecast].size).to eq(2)
+      expect(body[:data][:attributes][:forecast].keys).to eq(%i[summar temperature])
+      expect(body[:data][:attributes][:salaries].class).to eq(Array)
+      expect(body[:data][:attributes][:salaries].first.size).to eq(3)
+      expect(body[:data][:attributes][:salaries].first.keys).to eq(%i[title min max])
+
     end
   end
 end
