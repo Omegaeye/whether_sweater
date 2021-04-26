@@ -328,6 +328,18 @@
           null
         ]
       },
+      "/Users/kn/Projects/mod3/solo_projects/whether_sweater/app/controllers/api/v1/salaries_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/kn/Projects/mod3/solo_projects/whether_sweater/app/models/api_key.rb": {
         "lines": [
           1,
@@ -472,6 +484,30 @@
           0,
           0,
           null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/kn/Projects/mod3/solo_projects/whether_sweater/app/facades/city_facade.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           0
@@ -607,8 +643,53 @@
         ],
         "branches": {
         }
+      },
+      "/Users/kn/Projects/mod3/solo_projects/whether_sweater/app/services/city_service.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1619405692
+    "timestamp": 1619451300
   }
 }
