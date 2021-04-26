@@ -20,8 +20,8 @@ class CityFacade
                 if job == salary['job']['title']
                     job_info << { 
                         title: salary['job']['title'],
-                        min: salary['salary_percentiles']['percentile_25'].to_s.gsub(/[$,]/,'').to_f,
-                        max: salary['salary_percentiles']['percentile_75'].to_s.gsub(/[$,]/,'').to_f
+                        min: sprintf("$%2.2f", salary['salary_percentiles']['percentile_25']),
+                        max: sprintf("$%2.2f", salary['salary_percentiles']['percentile_75'])
                     }
                 end
             end
