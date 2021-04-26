@@ -5,7 +5,8 @@ class CityService
       f.params['search'] = search
       f.params['limit'] = 1
     end
-        return "https://api.teleport.org/api/cities/geonameid:5419384/" if response.env.request_body.nil?
+    
+        return "https://api.teleport.org/api/cities/geonameid:5419384/" if parse(response)['_embedded']['city:search-results'].empty?
         parse(response)['_embedded']['city:search-results'][0]['_links']['city:item']['href']
     end 
 

@@ -3,7 +3,7 @@ class SalariesFacade
     def self.city_job_weather_info(location)
         result = OpenStruct.new({ 
             id: nil,
-            destination: CityService.get_city_info('chicago')['name'],
+            destination: CityService.get_city_info(location)['name'],
             forecast: location_weather(location),
             salaries: urban_jobs_salary(location)
          })
