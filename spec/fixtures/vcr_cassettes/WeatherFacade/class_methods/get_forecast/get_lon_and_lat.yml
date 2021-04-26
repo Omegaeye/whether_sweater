@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 24 Apr 2021 23:04:44 GMT
+      - Mon, 26 Apr 2021 02:54:27 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Sat, 24 Apr 2021 23:04:44 GMT
+      - Mon, 26 Apr 2021 02:54:27 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=67E12AF72B3CB8B86FAA76FA757A0BF7; Path=/; HttpOnly
+      - JSESSIONID=35B9887C61B9855256E0F7943CC4EE81; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -53,6 +53,6 @@ http_interactions:
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"littleton,co"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Littleton","adminArea5Type":"City","adminArea4":"Arapahoe
-        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282038918","unknownInput":"","type":"s","latLng":{"lat":39.612653,"lng":-105.016198},"displayLatLng":{"lat":39.612653,"lng":-105.016198},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=AGmm8HbFGJGNFBftGEIaumSwARk2P9bU&type=map&size=225,160&locations=39.612653,-105.016198|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1031449739"}]}]}'
-  recorded_at: Sat, 24 Apr 2021 23:04:44 GMT
+        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282038918","unknownInput":"","type":"s","latLng":{"lat":39.612653,"lng":-105.016198},"displayLatLng":{"lat":39.612653,"lng":-105.016198},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=AGmm8HbFGJGNFBftGEIaumSwARk2P9bU&type=map&size=225,160&locations=39.612653,-105.016198|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-2041919886"}]}]}'
+  recorded_at: Mon, 26 Apr 2021 02:54:27 GMT
 recorded_with: VCR 6.0.0

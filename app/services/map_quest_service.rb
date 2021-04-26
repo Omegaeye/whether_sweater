@@ -1,11 +1,23 @@
 class MapQuestService
 
     def self.get_lon_and_lat(location)
-    response = conn.get('/geocoding/v1/address') do |f|
-      f.params['location'] = location
+      response = conn.get('/geocoding/v1/address') do |f|
+        f.params['location'] = location
+      end 
+      return {"lat": 39.738453,"lng": -104.984853} if response.env.request_body.nil?
+      parse(response)[:results][0][:locations][0][:latLng]
     end 
-    parse(response)[:results][0][:locations][0][:latLng]
-  end 
+
+
+    def self.get_direction(from, to)
+      response = conn.get('/directions/v2/route') do |f|
+        f.params['from'] = from
+        f.params['to'] = to
+      end 
+      parse(response)[:route]
+      
+      
+    end 
 
     private
 

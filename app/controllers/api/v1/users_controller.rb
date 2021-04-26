@@ -1,21 +1,24 @@
 class Api::V1::UsersController < ApplicationController
-include ApiKeyAuthenticatable
-# prepend_before_action :authenticate_with_api_key!, only: [:index]
 
   def new
     @user = User.new
   end
 
   def create
-    
+    if params[:password] != params[:password_confirmation]
+      return [false, param_invalid('password and password_confirmation', 'does not match')] 
+    end
+
     new_params = user_params
     new_params[:email] = user_params[:email].downcase
     
     @user = User.create(new_params)
+    
+    
     if @user.save
-        user_json = User.user_info(@user.id)
-        @serial = UsersSerializer.new(user_json)
-        render json: @serial, status: :created and return
+      user_json = User.user_info(@user.id)
+      @serial = UsersSerializer.new(user_json)
+        render json: @serial, status: :created
     else
         render json: @user.errors, status: :unprocessable_entity
     end
@@ -24,7 +27,7 @@ include ApiKeyAuthenticatable
   private
 
   def user_params
-        params.permit(:email, :password, :password_confirmation)
+    params.permit(:email, :password, :password_confirmation)
   end
 
 end
