@@ -19,13 +19,11 @@ class CityService
         parse(response)
     end
 
-
     def self.get_salaries(search)
         response = Faraday.get(get_urban_area(search)['_links']['ua:salaries']['href'])
         parse(response)['salaries']
     end
     
-
      private
 
     def self.conn
