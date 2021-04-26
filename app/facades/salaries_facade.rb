@@ -29,7 +29,7 @@ class SalariesFacade
     end
 
      def self.location_weather(location)
-        location =  CityService.get_city_info('chicago')['location']['latlon']
+        location =  CityService.get_city_info(location)['location']['latlon']
         weather_info = WeatherFacade.get_weather(location['longitude'], location['latitude'])
         { 
             summary: weather_info[:current][:weather][0][:description],
