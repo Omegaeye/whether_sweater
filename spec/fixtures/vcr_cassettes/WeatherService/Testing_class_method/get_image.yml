@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.flickr.com/services/rest?api_key=ENV[api_key]&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=1&text=denver,co
+    uri: https://www.flickr.com/services/rest?api_key=ENV[api_key]&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=1&text=denver,coskyline
     body:
       encoding: US-ASCII
       string: ''
@@ -21,16 +21,16 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '237'
+      - '261'
       Connection:
       - keep-alive
       Date:
-      - Tue, 27 Apr 2021 18:07:17 GMT
+      - Tue, 27 Apr 2021 23:42:21 GMT
       Server:
       - Apache/2.4.46 (Ubuntu)
       Set-Cookie:
       - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
-        expires=Thu, 27-May-2021 18:07:17 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+        expires=Thu, 27-May-2021 23:42:21 GMT; Max-Age=2592000; path=/; domain=.flickr.com
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -38,18 +38,19 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      - 1.1 6cab218159221ab723900fb6fe65d73f.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 7DbftYy2F2mAh9pr-1XgvSTrDGST9C0KyDJIsngdkpuk5Jw5bsISEw==
+      - PeYuk4hpnjNdlA22IVgvpfjxLkDN_vixMDFj2vGTB8EN5X51QGLXOQ==
     body:
       encoding: UTF-8
-      string: '{"photos":{"page":1,"pages":14957,"perpage":1,"total":"14957","photo":[{"id":"51142231625","owner":"20544648@N06","secret":"b81631d2df","server":"65535","farm":66,"title":"IMG_23478","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}'
-  recorded_at: Tue, 27 Apr 2021 18:07:17 GMT
+      string: '{"photos":{"page":1,"pages":14,"perpage":1,"total":"14","photo":[{"id":"2710497796","owner":"29032250@N06","secret":"5e651e3c87","server":"3118","farm":4,"title":"Denver
+        Marriott City Center: Night Skyline","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}'
+  recorded_at: Tue, 27 Apr 2021 23:42:21 GMT
 - request:
     method: get
-    uri: https://www.flickr.com/services/rest?api_key=ENV[api_key]&format=json&method=flickr.photos.getInfo&nojsoncallback=1&page=1&per_page=1&photo_id=51142231625
+    uri: https://www.flickr.com/services/rest?api_key=ENV[api_key]&format=json&method=flickr.photos.getInfo&nojsoncallback=1&page=1&per_page=1&photo_id=2710497796
     body:
       encoding: US-ASCII
       string: ''
@@ -71,15 +72,13 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
       Date:
-      - Tue, 27 Apr 2021 18:07:17 GMT
+      - Tue, 27 Apr 2021 23:42:22 GMT
       Server:
       - Apache/2.4.46 (Ubuntu)
       Set-Cookie:
       - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
-        expires=Thu, 27-May-2021 18:07:17 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+        expires=Thu, 27-May-2021 23:42:22 GMT; Max-Age=2592000; path=/; domain=.flickr.com
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -87,25 +86,67 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 48a6ccbb0ddb052ab512a3422295bd39.cloudfront.net (CloudFront)
+      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - J3symVpwQqkerqo2R7Nzb9JleGNyrU5McxofliT0FHp3rmE9JN7vtQ==
+      - QkrQXNjQgbF91CpbVMeWvE-I-2OuH7QKqSgTMmGQtMGgfJn12zWzTQ==
     body:
-      encoding: ASCII-8BIT
-      string: '{"photo":{"id":"51142231625","secret":"b81631d2df","server":"65535","farm":66,"dateuploaded":"1619488393","isfavorite":0,"license":"0","safety_level":"0","rotation":90,"owner":{"nsid":"20544648@N06","username":"mudsharkalex","realname":"","location":null,"iconserver":"8132","iconfarm":9,"path_alias":"mudsharkalex"},"title":{"_content":"IMG_23478"},"description":{"_content":"4\/15\/2021
-        -- Snowy window with the Boeing 737 Max 8''s orange disco lights on."},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1619488393","taken":"2021-04-15
-        19:36:33","takengranularity":"0","takenunknown":"0","lastupdate":"1619488609"},"views":"5","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":0},"usage":{"candownload":0,"canblog":0,"canprint":0,"canshare":1},"comments":{"_content":"0"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[{"id":"20499326-51142231625-3157","author":"20544648@N06","authorname":"mudsharkalex","raw":"Colorado","_content":"colorado","machine_tag":0},{"id":"20499326-51142231625-9669","author":"20544648@N06","authorname":"mudsharkalex","raw":"Denver","_content":"denver","machine_tag":0},{"id":"20499326-51142231625-85148","author":"20544648@N06","authorname":"mudsharkalex","raw":"Denver
-        CO","_content":"denverco","machine_tag":0},{"id":"20499326-51142231625-2695","author":"20544648@N06","authorname":"mudsharkalex","raw":"airport","_content":"airport","machine_tag":0},{"id":"20499326-51142231625-446848","author":"20544648@N06","authorname":"mudsharkalex","raw":"Denver
-        Airport","_content":"denverairport","machine_tag":0},{"id":"20499326-51142231625-9668","author":"20544648@N06","authorname":"mudsharkalex","raw":"Denver
-        International Airport","_content":"denverinternationalairport","machine_tag":0},{"id":"20499326-51142231625-6720","author":"20544648@N06","authorname":"mudsharkalex","raw":"DEN","_content":"den","machine_tag":0},{"id":"20499326-51142231625-24467","author":"20544648@N06","authorname":"mudsharkalex","raw":"Boeing","_content":"boeing","machine_tag":0},{"id":"20499326-51142231625-536542","author":"20544648@N06","authorname":"mudsharkalex","raw":"Boeing
-        737","_content":"boeing737","machine_tag":0},{"id":"20499326-51142231625-80338049","author":"20544648@N06","authorname":"mudsharkalex","raw":"Boeing
-        737 Max","_content":"boeing737max","machine_tag":0},{"id":"20499326-51142231625-230849216","author":"20544648@N06","authorname":"mudsharkalex","raw":"Boeing
-        737 Max 8","_content":"boeing737max8","machine_tag":0},{"id":"20499326-51142231625-101050","author":"20544648@N06","authorname":"mudsharkalex","raw":"737","_content":"737","machine_tag":0},{"id":"20499326-51142231625-6926422","author":"20544648@N06","authorname":"mudsharkalex","raw":"Max
-        8","_content":"max8","machine_tag":0},{"id":"20499326-51142231625-521","author":"20544648@N06","authorname":"mudsharkalex","raw":"Southwest","_content":"southwest","machine_tag":0},{"id":"20499326-51142231625-108396","author":"20544648@N06","authorname":"mudsharkalex","raw":"Southwest
-        Airlines","_content":"southwestairlines","machine_tag":0}]},"location":{"latitude":"39.863600","longitude":"-104.675700","accuracy":"16","context":"0","locality":{"_content":"Congressional
-        District 6"},"neighbourhood":{"_content":""},"region":{"_content":"Colorado"},"country":{"_content":"United
-        States"}},"geoperms":{"ispublic":1,"iscontact":0,"isfriend":0,"isfamily":0},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/mudsharkalex\/51142231625\/"}]},"media":"photo"},"stat":"ok"}'
-  recorded_at: Tue, 27 Apr 2021 18:07:17 GMT
+      encoding: UTF-8
+      string: '{"photo":{"id":"2710497796","secret":"5e651e3c87","server":"3118","farm":4,"dateuploaded":"1217252607","isfavorite":0,"license":"0","safety_level":"0","rotation":0,"originalsecret":"99e0252b7f","originalformat":"jpg","owner":{"nsid":"29032250@N06","username":"Denver_Marriott_City_Center","realname":"","location":"","iconserver":"3273","iconfarm":4,"path_alias":"denvermarriott"},"title":{"_content":"Denver
+        Marriott City Center: Night Skyline"},"description":{"_content":"Denver has
+        the 10th largest downtown in America, and you can experience <a href=\"http:\/\/www.marriott.com\/dendt\"
+        rel=\"noreferrer nofollow\">Denver Marriott City Center<\/a>''s breathtaking
+        night skyline view from your hotel room!"},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1217252607","taken":"2008-07-28
+        06:43:27","takengranularity":"0","takenunknown":0,"lastupdate":"1455970508"},"views":"4821","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":0},"usage":{"candownload":1,"canblog":0,"canprint":0,"canshare":1},"comments":{"_content":"2"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[{"id":"28986928-2710497796-4653664","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        hotel","_content":"denverhotel","machine_tag":0},{"id":"28986928-2710497796-8864232","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        hotels","_content":"denverhotels","machine_tag":0},{"id":"28986928-2710497796-12727997","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Hotel
+        in Denver","_content":"hotelindenver","machine_tag":0},{"id":"28986928-2710497796-8864238","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Hotels
+        in Denver","_content":"hotelsindenver","machine_tag":0},{"id":"28986928-2710497796-2073","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"hotel","_content":"hotel","machine_tag":0},{"id":"28986928-2710497796-23714","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"hotels","_content":"hotels","machine_tag":0},{"id":"28986928-2710497796-26938550","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver,
+        CO hotels","_content":"denvercohotels","machine_tag":0},{"id":"28986928-2710497796-15426353","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver,
+        CO hotel","_content":"denvercohotel","machine_tag":0},{"id":"28986928-2710497796-26938554","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        CO skyline","_content":"denvercoskyline","machine_tag":0},{"id":"28986928-2710497796-29309","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"suite","_content":"suite","machine_tag":0},{"id":"28986928-2710497796-56162","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"suites","_content":"suites","machine_tag":0},{"id":"28986928-2710497796-26938556","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        suite","_content":"denversuite","machine_tag":0},{"id":"28986928-2710497796-15426351","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        suites","_content":"denversuites","machine_tag":0},{"id":"28986928-2710497796-61630","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"accommodations","_content":"accommodations","machine_tag":0},{"id":"28986928-2710497796-31212","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"accommodation","_content":"accommodation","machine_tag":0},{"id":"28986928-2710497796-26938558","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        accommodations","_content":"denveraccommodations","machine_tag":0},{"id":"28986928-2710497796-26938560","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        accommodation","_content":"denveraccommodation","machine_tag":0},{"id":"28986928-2710497796-145991","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver,
+        Colorado","_content":"denvercolorado","machine_tag":0},{"id":"28986928-2710497796-85148","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        CO","_content":"denverco","machine_tag":0},{"id":"28986928-2710497796-26938564","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        hotels","_content":"coloradohotels","machine_tag":0},{"id":"28986928-2710497796-12551781","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        hotel","_content":"coloradohotel","machine_tag":0},{"id":"28986928-2710497796-26938566","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Meeting
+        space in Colorado","_content":"meetingspaceincolorado","machine_tag":0},{"id":"28986928-2710497796-26938568","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Meeting
+        space in Denver","_content":"meetingspaceindenver","machine_tag":0},{"id":"28986928-2710497796-26938570","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        meeting space","_content":"denvermeetingspace","machine_tag":0},{"id":"28986928-2710497796-26938572","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        meeting space","_content":"coloradomeetingspace","machine_tag":0},{"id":"28986928-2710497796-26938574","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        boardroom","_content":"coloradoboardroom","machine_tag":0},{"id":"28986928-2710497796-26938576","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        boardroom","_content":"denverboardroom","machine_tag":0},{"id":"28986928-2710497796-26938578","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        Marriott City Center","_content":"denvermarriottcitycenter","machine_tag":0},{"id":"28986928-2710497796-26938580","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        Marriott","_content":"denvermarriott","machine_tag":0},{"id":"28986928-2710497796-26938582","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Marriott
+        Denver","_content":"marriottdenver","machine_tag":0},{"id":"28986928-2710497796-26938584","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Marriott
+        in Denver CO","_content":"marriottindenverco","machine_tag":0},{"id":"28986928-2710497796-26938586","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Marriott
+        in Denver","_content":"marriottindenver","machine_tag":0},{"id":"28986928-2710497796-26938588","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Marriott
+        in Denver Colorado","_content":"marriottindenvercolorado","machine_tag":0},{"id":"28986928-2710497796-26938590","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        Marriott","_content":"coloradomarriott","machine_tag":0},{"id":"28986928-2710497796-26938592","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Marriott
+        in Colorado","_content":"marriottincolorado","machine_tag":0},{"id":"28986928-2710497796-2130609","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Marriott
+        hotels","_content":"marriotthotels","machine_tag":0},{"id":"28986928-2710497796-312515","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Marriott
+        hotel","_content":"marriotthotel","machine_tag":0},{"id":"28986928-2710497796-26938594","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        ballrooms","_content":"denverballrooms","machine_tag":0},{"id":"28986928-2710497796-26938596","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        ballrooms","_content":"coloradoballrooms","machine_tag":0},{"id":"28986928-2710497796-26938598","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        ballroom","_content":"denverballroom","machine_tag":0},{"id":"28986928-2710497796-26938600","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        business center","_content":"denverbusinesscenter","machine_tag":0},{"id":"28986928-2710497796-26938602","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        business center","_content":"coloradobusinesscenter","machine_tag":0},{"id":"28986928-2710497796-15070395","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"D
+        spot lounge","_content":"dspotlounge","machine_tag":0},{"id":"28986928-2710497796-26938604","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        hotel rooms","_content":"denverhotelrooms","machine_tag":0},{"id":"28986928-2710497796-26938606","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Denver
+        hotel room","_content":"denverhotelroom","machine_tag":0},{"id":"28986928-2710497796-26938608","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        hotel rooms","_content":"coloradohotelrooms","machine_tag":0},{"id":"28986928-2710497796-26938610","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Colorado
+        hotel room","_content":"coloradohotelroom","machine_tag":0},{"id":"28986928-2710497796-9096943","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"hotel
+        reservations","_content":"hotelreservations","machine_tag":0},{"id":"28986928-2710497796-9864265","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"vacation
+        packages","_content":"vacationpackages","machine_tag":0},{"id":"28986928-2710497796-26937178","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"vacation
+        hotels","_content":"vacationhotels","machine_tag":0},{"id":"28986928-2710497796-18666662","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"vacation
+        hotel","_content":"vacationhotel","machine_tag":0},{"id":"28986928-2710497796-649131","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"Continental
+        Breakfast","_content":"continentalbreakfast","machine_tag":0},{"id":"28986928-2710497796-22090301","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"value
+        accommodations","_content":"valueaccommodations","machine_tag":0},{"id":"28986928-2710497796-869404","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"amenities","_content":"amenities","machine_tag":0},{"id":"28986928-2710497796-5659","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"lodging","_content":"lodging","machine_tag":0},{"id":"28986928-2710497796-20409","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"dining","_content":"dining","machine_tag":0},{"id":"28986928-2710497796-14973","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"transportation","_content":"transportation","machine_tag":0},{"id":"28986928-2710497796-26937180","author":"29032250@N06","authorname":"Denver_Marriott_City_Center","raw":"free
+        hotel shuttle","_content":"freehotelshuttle","machine_tag":0}]},"location":{"latitude":"39.746200","longitude":"-104.991059","accuracy":"15","context":"0","locality":{"_content":"Denver","woeid":2391279},"county":{"_content":"Denver","woeid":12587743},"region":{"_content":"Colorado","woeid":2347564},"country":{"_content":"United
+        States","woeid":23424977},"neighbourhood":{"_content":"Western Area","woeid":28337906}},"geoperms":{"ispublic":1,"iscontact":0,"isfriend":0,"isfamily":0},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/denvermarriott\/2710497796\/"}]},"media":"photo"},"stat":"ok"}'
+  recorded_at: Tue, 27 Apr 2021 23:42:22 GMT
 recorded_with: VCR 6.0.0

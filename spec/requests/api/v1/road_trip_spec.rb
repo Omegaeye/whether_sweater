@@ -32,7 +32,7 @@ RSpec.describe "Api::V1::RoadTrips", type: :request do
     let(:no_destination_attributes) {
     {
       origin: 'denver',
-      destination: ' ',
+      destination: '''',
       api_key: @user.api_keys.first.token
     }
   }
@@ -52,13 +52,6 @@ RSpec.describe "Api::V1::RoadTrips", type: :request do
     }
   }
 
-     let(:no_destination_attributes) {
-       {
-        origin: 'sitka,ak',
-        destination: 'germany',
-        api_key: @user.api_keys.first.token
-      } 
-    }
   
   let(:valid_headers) {
     {"CONTENT_TYPE" => "application/json; charset=utf-8"}
@@ -137,20 +130,26 @@ RSpec.describe "Api::V1::RoadTrips", type: :request do
       expect(body[:errors]).to eq(["either origin, or destination, or api_key parameter was not included in your request"])
     end
 
-     it "return errors with blank destination param", :vcr do
-      @user = User.create!(valid_attributes)
-      @user.api_keys.create!(token: SecureRandom.hex)
-      post '/api/v1/road_trip', params: no_destination_attributes, headers: valid_headers, as: :json
-      expect(response).to have_http_status(400)
-       body = JSON.parse(response.body, symbolize_names: true)
-      expect(body[:errors]).to eq("parameter is bad: [false, \"You will need a jetpack for that route\"]")
-    end
-
-       it "return errors with bad request", :vcr do
+      it "return errors with bad request", :vcr do
         @user = User.create!(valid_attributes)
         @user.api_keys.create!(token: SecureRandom.hex)
 
         post '/api/v1/road_trip', params: no_destination_attributes, headers: valid_headers, as: :json
+        expect(response).to have_http_status(400)
+        body = JSON.parse(response.body, symbolize_names: true)
+        expect(body[:errors]).to eq(["destination parameter is bad: cannot be empty/blank"])
+    end
+
+     it "return bad request", :vcr do
+      @user = User.create!(valid_attributes)
+      @user.api_keys.create!(token: SecureRandom.hex)
+        params =  {
+            origin: 'fdasb32',
+            destination: 'alaska',
+            api_key: @user.api_keys.first.token
+         }
+
+        post '/api/v1/road_trip', params: params, headers: valid_headers, as: :json
         expect(response).to have_http_status(400)
         body = JSON.parse(response.body, symbolize_names: true)
         expect(body[:errors]).to eq("parameter is bad: [false, \"You will need a jetpack for that route\"]")

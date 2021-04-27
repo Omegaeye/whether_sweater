@@ -55,7 +55,17 @@ RSpec.describe 'Api::V1::Weather', type: :request do
 
     it 'testing edge case', :vcr do
       get '/api/v1/forecast?location=', headers: valid_headers, as: :json
-      expect(response).to have_http_status(404)
+      expect(response).to have_http_status(400)
+    end
+
+    it 'testing quotes', :vcr do
+      get '/api/v1/forecast?location=''''', headers: valid_headers, as: :json
+      expect(response).to have_http_status(400)
+    end
+
+     it 'testing brackets', :vcr do
+      get '/api/v1/forecast?location=[]', headers: valid_headers, as: :json
+      expect(response).to have_http_status(400)
     end
   end
 end

@@ -12,11 +12,9 @@ module ApiKeyAuthenticatable
     keep_slaying, response = screening_params(params)
 
     if keep_slaying
-
-      if params[:api_key].present? && params[:origin].present? && params[:destination].present?
+      if ApiKey.find_by(token: params[:api_key]).present?
         @current_api_key = ApiKey.find_by token: params[:api_key]
         @current_bearer = current_api_key&.bearer
-
       else
         render status: :unauthorized
       end
@@ -36,9 +34,9 @@ module ApiKeyAuthenticatable
       return [false, param_missing(['either origin, or destination, or api_key'])]
     end
 
-    return [false, param_bad('origin', 'cannot be empty/blank')] if params[:origin] && params[:origin].length < 1
+    return [false, param_bad('origin', 'cannot be empty/blank')] if params[:origin] && params[:origin].length <= 1
 
-    if params[:destination] && params[:destination].length < 1
+    if params[:destination] && params[:destination].length <= 1
       return [false, param_bad('destination', 'cannot be empty/blank')]
     end
 

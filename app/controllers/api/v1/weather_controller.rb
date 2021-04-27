@@ -1,10 +1,11 @@
 class Api::V1::WeatherController < ApplicationController
+  before_action :check_params_location
   def forecast
-    if params[:location].present?
-      @forecast = WeatherFacade.get_forecast(params[:location])
-      render json: ForecastSerializer.new(@forecast)
+    @forecast = WeatherFacade.get_forecast(params[:location])
+    if @forecast.class == Array
+      return bad_request(@forecast)
     else
-      render json: { data: {} }, status: 404
+      render json: ForecastSerializer.new(@forecast)
     end
   end
 end

@@ -2,12 +2,13 @@ class ImagesService
   def self.get_image_id(location)
     response = conn.get('/services/rest') do |f|
       f.params['method'] = 'flickr.photos.search'
-      f.params['text'] = location
+      f.params['text'] = location + 'skyline'
       f.params['per_page'] = 1
       f.params['format'] = 'json'
       f.params['nojsoncallback'] = 1
     end
-    return ['Lets try something on this Earth'] if parse(response)[:stat] == 'fail'
+
+    return ['Lets try something on this Earth'] if parse(response)[:stat] == 'fail' || parse(response)[:photos][:photo].empty?
 
     parse(response)[:photos][:photo][0][:id]
   end

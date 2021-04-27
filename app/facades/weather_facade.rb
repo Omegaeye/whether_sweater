@@ -3,18 +3,21 @@ require 'ostruct'
 class WeatherFacade
 
     def self.get_forecast(location)
-        data = OpenStruct.new({ 
+        coord =  MapQuestService.get_lon_and_lat(location)
+        return coord if coord.class == Array
+        forecast = WeatherService.get_forecast(coord[:lng], coord[:lat])
+        
+        OpenStruct.new({ 
             id: nil,
-            current_weather: get_current_weather(location),
-            daily_weather: get_daily_weather(location),
-            hourly_weather: get_hourly_weather(location)
+            current_weather: get_current_weather(forecast),
+            daily_weather: get_daily_weather(forecast),
+            hourly_weather: get_hourly_weather(forecast)
          })
     end
     
 
-    def self.get_current_weather(location)
-        forecast = get_weather(lon_and_lat(location).lon, lon_and_lat(location).lat)
-        current_weather = { 
+    def self.get_current_weather(forecast)
+         { 
             datetime: Time.at(forecast[:current][:dt]).to_s(:db),
             sunrise: Time.at(forecast[:current][:sunrise]).to_s(:time),
             sunset: Time.at(forecast[:current][:sunset]).to_s(:time),
@@ -28,8 +31,7 @@ class WeatherFacade
           }
     end
 
-    def self.get_hourly_weather(location)
-        forecast = get_weather(lon_and_lat(location).lon, lon_and_lat(location).lat)
+    def self.get_hourly_weather(forecast)
         hourly = forecast[:hourly].map do |hour|
            { 
                 time: Time.at(hour[:dt]).to_s(:time),
@@ -41,8 +43,7 @@ class WeatherFacade
         hourly.first(8)
     end
 
-   def self.get_daily_weather(location)
-        forecast = get_weather(lon_and_lat(location).lon, lon_and_lat(location).lat)
+   def self.get_daily_weather(forecast)
         daily = forecast[:daily].map do |day|
            { 
                 date: Time.at(day[:dt]).to_date,
@@ -55,21 +56,5 @@ class WeatherFacade
              }
         end
         daily.first(5)
-    end
-    
-    
-    def self.lon_and_lat(location)
-        location =  MapQuestService.get_lon_and_lat(location)
-
-        lon_and_lat ||= OpenStruct.new({ 
-            lon: location[:lng],
-            lat: location[:lat]
-         })
-
-        lon_and_lat
-    end
-
-    def self.get_weather(lon, lat)
-        weather ||= WeatherService.get_forecast(lon, lat)
     end
 end

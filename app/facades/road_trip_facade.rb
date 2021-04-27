@@ -1,6 +1,7 @@
 class RoadTripFacade
   def self.road_trip(from, to)
     dir = direction(from, to)
+
     return dir if dir.class == Array 
     trip = OpenStruct.new({
                             id: nil,

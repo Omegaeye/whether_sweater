@@ -9,6 +9,7 @@ class ApplicationController < ActionController::API
   end
 
   def param_bad(param, reason)
+
     render json: JSON.generate({
                                  error: 'parameter value is bad',
                                  errors: ["#{param} parameter is bad: #{reason}"]
@@ -27,5 +28,15 @@ class ApplicationController < ActionController::API
                                  error: 'Bad Request for your parameter',
                                  errors: "parameter is bad: #{reason}"
                                }), status: :bad_request
+  end
+
+  def check_params_location
+    if params[:location].nil?
+      return [false, param_missing(['location'])]
+    end
+    
+    if params[:location] && params[:location].length <= 1
+      return [false, param_bad('location', 'cannot be empty/blank')]
+    end
   end
 end

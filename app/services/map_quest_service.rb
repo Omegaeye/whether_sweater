@@ -4,7 +4,8 @@ class MapQuestService
       response = conn.get('/geocoding/v1/address') do |f|
         f.params['location'] = location
       end 
-      return [false,'Lets try something on this Earth'] if response.env.response_body.nil?
+      
+      return [false,'Lets try something on this Earth'] if response.env.response_body.empty?
       parse(response)[:results][0][:locations][0][:latLng]
     end 
 

@@ -30,7 +30,7 @@ class SalariesFacade
 
      def self.location_weather(location)
         location =  CityService.get_city_info(location)['location']['latlon']
-        weather_info = WeatherFacade.get_weather(location['longitude'], location['latitude'])
+        weather_info = WeatherService.get_forecast(location['longitude'], location['latitude'])
         { 
             summary: weather_info[:current][:weather][0][:description],
             temperature: "#{weather_info[:current][:temp].to_i} F"

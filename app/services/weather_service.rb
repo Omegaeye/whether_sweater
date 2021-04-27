@@ -6,6 +6,7 @@ class WeatherService
       f.params['units'] = 'imperial'
       f.params['exclude'] = 'minutely'
     end
+    
     parse(response)
   end
 

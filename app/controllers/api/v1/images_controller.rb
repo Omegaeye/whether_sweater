@@ -1,5 +1,5 @@
 class Api::V1::ImagesController < ApplicationController
-  before_action :check_params
+  before_action :check_params_location
   def backgrounds
     @image = ImagesFacade.get_image(params[:location])
     if @image.class == Array
@@ -11,13 +11,5 @@ class Api::V1::ImagesController < ApplicationController
 
   private
 
-  def check_params
-    if params[:location].nil?
-      return [false, param_missing(['location'])]
-    end
-    
-    if params[:location] && params[:location].length < 1
-      return [false, param_bad('location', 'cannot be empty/blank')]
-    end
-  end
+
 end

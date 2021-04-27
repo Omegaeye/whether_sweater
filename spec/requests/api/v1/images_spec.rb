@@ -35,7 +35,7 @@ RSpec.describe "Api::V1::Images", type: :request do
        expect(body[:data][:attributes][:image][:location]).to eq('denver,co')
        expect(body[:data][:attributes][:image][:image_url]).to be_a(String)
        expect(body[:data][:attributes][:image][:credit][:source]).to eq('flickr.com')
-       expect(body[:data][:attributes][:image][:credit][:author]).to eq('mudsharkalex')
+       expect(body[:data][:attributes][:image][:credit][:author]).to be_a(String)
 
     end
 
@@ -46,7 +46,7 @@ RSpec.describe "Api::V1::Images", type: :request do
 
      it "returns b when given no params", :vcr do
       get '/api/v1/backgrounds?location=fdafda', headers: valid_headers, as: :json
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(400)
     end
 
      it "returns error when no params", :vcr do
@@ -58,7 +58,7 @@ RSpec.describe "Api::V1::Images", type: :request do
      it "returns bad request", :vcr do
       get '/api/v1/backgrounds?location= ''''', headers: valid_headers, as: :json
       expect(response).to have_http_status(400)
-      expect(response.body).to eq( "{\"error\":\"Bad Request for your parameter\",\"errors\":\"parameter is bad: [\\\"Lets try something on this Earth\\\"]\"}")
+      expect(response.body).to eq( "{\"error\":\"parameter value is bad\",\"errors\":[\"location parameter is bad: cannot be empty/blank\"]}")
 
     end
   end

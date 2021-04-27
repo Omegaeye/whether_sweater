@@ -4,13 +4,17 @@ RSpec.describe WeatherFacade, type: :model do
 
   describe "class methods" do
     describe "get forecast" do
+        before :each do
+            @coord = MapQuestService.get_lon_and_lat('littleton,co')
+            @forecast = WeatherService.get_forecast(@coord[:lng], @coord[:lat])
+        end
         it "returns with current daily and hourly weather", :vcr do
             response = WeatherFacade.get_forecast('littleton,co')
              expect(response.class).to eq(OpenStruct)
         end
 
         it "get_current_weather", :vcr do
-            response = WeatherFacade.get_current_weather('littleton,co')
+            response = WeatherFacade.get_current_weather(@forecast)
             expect(response.class).to eq(Hash)
             expect(response.keys.size).to eq(10)
             expect(response.keys.size).to_not eq(11)
@@ -19,7 +23,7 @@ RSpec.describe WeatherFacade, type: :model do
         end
 
         it "get_daily_weather", :vcr do
-            response = WeatherFacade.get_daily_weather('littleton,co')
+            response = WeatherFacade.get_daily_weather(@forecast)
             expect(response.class).to eq(Array)
             expect(response.size).to eq(5)
             expect(response.first.size).to eq(7)
@@ -28,25 +32,13 @@ RSpec.describe WeatherFacade, type: :model do
         end
 
         it "get_hourly_weather", :vcr do
-            response = WeatherFacade.get_hourly_weather('littleton,co')
+            response = WeatherFacade.get_hourly_weather(@forecast)
             expect(response.class).to eq(Array)
             expect(response.size).to eq(8)
             expect(response.first.size).to eq(4)
             expect(response.first.keys).to eq(%i[time temp conditions icon])
             expect(response.first.keys).to_not eq(%i[:feels_like pressure humidity dew_point uvi clouds visibility wind_speed wind_deg wind_gust weater pop])
 
-        end
-
-        it "get_lon_and_lat", :vcr do
-            response = WeatherFacade.lon_and_lat('littleton,co')
-            expect(response.class).to eq(OpenStruct)
-            expect(response.lon.class).to eq(Float)
-            expect(response.lat.class).to eq(Float)
-        end
-
-        it "get_weather", :vcr do
-            response = WeatherFacade.get_weather(-105.016, 39.612)
-            expect(response.keys).to eq(%i[lat lon timezone timezone_offset current hourly daily])
         end
     end
   end
