@@ -18,6 +18,7 @@ class ImagesService
     response = conn.get('/services/rest') do |f|
       f.params['method'] = 'flickr.photos.getInfo'
       f.params['photo_id'] = image_id
+      f.params['page'] = 1
       f.params['per_page'] = 1
       f.params['format'] = 'json'
       f.params['nojsoncallback'] = 1

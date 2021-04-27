@@ -7,7 +7,7 @@ class ImagesFacade
         data = OpenStruct.new({ 
             id: nil,
             image: { 
-            location: image_data[:owner][:location],
+            location: location,
             image_url: image_data[:urls][:url].first[:_content],
             credit: image_credit(image_data[:owner][:username])
          }})

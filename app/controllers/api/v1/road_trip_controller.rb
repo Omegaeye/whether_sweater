@@ -17,5 +17,4 @@ prepend_before_action :authenticate_with_api_key!, only: [:index]
         # render json: {data: 'success'}
     end
     
-
 end
