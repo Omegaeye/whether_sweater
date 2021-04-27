@@ -32,7 +32,8 @@
 What things you need to install the software and how to install them
 
 * rails
-```sh
+
+```
 gem install rails --version 5.2.4.3
 ```
 
@@ -43,7 +44,7 @@ gem install rails --version 5.2.4.3
         - https://openweathermap.org/api
         - https://developer.mapquest.com/
         - https://www.flickr.com/services/api/
-    3. Install gem packages: `bundle install`
+    3. Install gem packages: 'bundle install'
     4. Setup and migrate the database: `rails db:{create migrate}`
     5. Put your api keys into application.yml
 
@@ -51,36 +52,39 @@ gem install rails --version 5.2.4.3
   To access the API end points, type in rails server then copy and paste the end points into the Postman/browser with the values.
 
     * Search for developer salaries in urban area: http://localhost:3000/api/v1/salaries?destination={{city_name,state}}
+    
     * Search for weather forecast in a city and state: http://localhost:3000/api/v1/forecast?location={{city_name,state}}
+    
     * Search for an image of a given city and state: http://localhost:3000/api/v1/backgrounds?location={{city_name,state}}
+    
     * Search for distance, time, and weather for a road trip: http://localhost:3000/api/v1/road_trip
         - To search open up postman and set up your post to the following image:
 
-            <img src="https://user-images.githubusercontent.com/46826902/116298175-5a122a80-a759-11eb-84fa-356afae88997.png">
+ <img src="https://user-images.githubusercontent.com/46826902/116298175-5a122a80-a759-11eb-84fa-356afae88997.png">
 
         - expect response
 
-            <img src="https://user-images.githubusercontent.com/46826902/116298793-2257b280-a75a-11eb-8cea-25ed1c0e0d9d.png">
+ <img src="https://user-images.githubusercontent.com/46826902/116298793-2257b280-a75a-11eb-8cea-25ed1c0e0d9d.png">
 
 ### Creating a user and authenticate
     To create a user 
         * post http://localhost:3000/api/v1/users with valid attributes and headers
 
-                <img src="https://user-images.githubusercontent.com/46826902/116296159-1c140700-a757-11eb-9895-cf3c825b25f5.png" width="75%" height="50%">
+   <img src="https://user-images.githubusercontent.com/46826902/116296159-1c140700-a757-11eb-9895-cf3c825b25f5.png" width="75%" height="50%">
 
         * expect response
 
-                <img src="https://user-images.githubusercontent.com/46826902/116296936-06eba800-a758-11eb-935d-fbf5d3318217.png">
+   <img src="https://user-images.githubusercontent.com/46826902/116296936-06eba800-a758-11eb-935d-fbf5d3318217.png">
 
     To authenticate user
 
         * post http://localhost:3000/api/v1/sessions with valid attributes and headers
 
-                <img src="https://user-images.githubusercontent.com/46826902/116297368-6ea1f300-a758-11eb-8374-b8624fa8a275.png" width="75%" height="50%">
+   <img src="https://user-images.githubusercontent.com/46826902/116297368-6ea1f300-a758-11eb-8374-b8624fa8a275.png" width="75%" height="50%">
 
         * expect response
 
-                <img src="https://user-images.githubusercontent.com/46826902/116297523-95f8c000-a758-11eb-98e1-05cbbb63c305.png">
+   <img src="https://user-images.githubusercontent.com/46826902/116297523-95f8c000-a758-11eb-98e1-05cbbb63c305.png">
 
 ## Method Highlights/Tests
 
@@ -123,6 +127,7 @@ In order to run all tests and see coverage run:
 
   - Ruby/Rails
   - HTML
+  - API
 
 ## License
 
