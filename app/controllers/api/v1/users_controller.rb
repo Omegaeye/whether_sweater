@@ -1,9 +1,5 @@
 class Api::V1::UsersController < ApplicationController
 
-  def new
-    @user = User.new
-  end
-
   def create
     if params[:password] != params[:password_confirmation]
       return [false, param_invalid('password and password_confirmation', 'does not match')] 
@@ -13,8 +9,7 @@ class Api::V1::UsersController < ApplicationController
     new_params[:email] = user_params[:email].downcase
     
     @user = User.create(new_params)
-    
-    
+        
     if @user.save
       user_json = User.user_info(@user.id)
       @serial = UsersSerializer.new(user_json)

@@ -35,7 +35,7 @@ module ApiKeyAuthenticatable
   private
 
   def screening_params(params)
-    if params[:origin].nil? && params[:destination].nil? && params[:api_key].nil?
+    if params[:origin].nil? || params[:destination].nil? || params[:api_key].nil?
       return [false, param_missing(['either origin, or destination, or api_key'])]
     end
 
