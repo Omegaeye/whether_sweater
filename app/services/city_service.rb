@@ -5,7 +5,8 @@ class CityService
       f.params['search'] = search
       f.params['limit'] = 1
     end
-       
+    
+        return "https://api.teleport.org/api/cities/geonameid:5419384/" if parse(response)['_embedded']['city:search-results'].empty?
         parse(response)['_embedded']['city:search-results'][0]['_links']['city:item']['href']
     end 
 
@@ -18,8 +19,12 @@ class CityService
         response = Faraday.get(get_city_info(search)['_links']['city:urban_area']['href'])
         parse(response)
     end
-    
 
+    def self.get_salaries(search)
+        response = Faraday.get(get_urban_area(search)['_links']['ua:salaries']['href'])
+        parse(response)['salaries']
+    end
+    
      private
 
     def self.conn

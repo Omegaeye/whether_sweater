@@ -21,7 +21,6 @@ require 'rspec/rails'
 # require only the support files necessary.
 #
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
-
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
@@ -79,4 +78,5 @@ VCR.configure do |config|
   config.filter_sensitive_data( ENV['api_key'] ) { ENV['api_key'] }
   config.default_cassette_options = { re_record_interval: 7.days }
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
 end
