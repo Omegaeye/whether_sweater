@@ -127,6 +127,7 @@ In order to run all tests and see coverage run:
 
   - Ruby/Rails
   - HTML
+  - API
 
 ## License
 
