@@ -52,8 +52,11 @@ gem install rails --version 5.2.4.3
   To access the API end points, type in rails server then copy and paste the end points into the Postman/browser with the values.
 
     * Search for developer salaries in urban area: http://localhost:3000/api/v1/salaries?destination={{city_name,state}}
+    
     * Search for weather forecast in a city and state: http://localhost:3000/api/v1/forecast?location={{city_name,state}}
+    
     * Search for an image of a given city and state: http://localhost:3000/api/v1/backgrounds?location={{city_name,state}}
+    
     * Search for distance, time, and weather for a road trip: http://localhost:3000/api/v1/road_trip
         - To search open up postman and set up your post to the following image:
 
