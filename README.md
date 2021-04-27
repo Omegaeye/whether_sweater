@@ -32,9 +32,9 @@
 What things you need to install the software and how to install them
 
 * rails
-```sh
+
 gem install rails --version 5.2.4.3
-```
+
 
 ### Installing
 
@@ -43,7 +43,7 @@ gem install rails --version 5.2.4.3
         - https://openweathermap.org/api
         - https://developer.mapquest.com/
         - https://www.flickr.com/services/api/
-    3. Install gem packages: `bundle install`
+    3. Install gem packages: 'bundle install'
     4. Setup and migrate the database: `rails db:{create migrate}`
     5. Put your api keys into application.yml
 
