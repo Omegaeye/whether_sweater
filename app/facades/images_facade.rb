@@ -4,6 +4,7 @@ class ImagesFacade
 
     def self.get_image(location)
         image_data = ImagesService.get_image(location)
+        return image_data if image_data.class == Array
         data = OpenStruct.new({ 
             id: nil,
             image: { 

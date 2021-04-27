@@ -10,6 +10,10 @@ RSpec.describe "Api::V1::Images", type: :request do
   {location: ''}
   }
 
+   let(:nil_attributes) {
+  {location: nil}
+  }
+
   let(:valid_headers) {
     {"CONTENT_TYPE" => "application/json; charset=utf-8"}
     {"Etag" => "b13ad756286208ab0f16e6175850a0b3"}
@@ -37,13 +41,25 @@ RSpec.describe "Api::V1::Images", type: :request do
 
     it "returns 404 when given no params" do
       get '/api/v1/backgrounds?location=', headers: valid_headers, as: :json
-      expect(response).to have_http_status(404)
+      expect(response).to have_http_status(400)
     end
 
      it "returns b when given no params", :vcr do
       get '/api/v1/backgrounds?location=fdafda', headers: valid_headers, as: :json
       expect(response).to have_http_status(200)
-      expect(response)
+    end
+
+     it "returns error when no params", :vcr do
+      get '/api/v1/backgrounds', headers: valid_headers, as: :json
+      expect(response.status).to eq(400)
+      expect(response.body).to eq("{\"error\":\"require parameter is missing\",\"errors\":[\"location parameter was not included in your request\"]}")
+    end
+
+     it "returns bad request", :vcr do
+      get '/api/v1/backgrounds?location= ''''', headers: valid_headers, as: :json
+      expect(response).to have_http_status(400)
+      expect(response.body).to eq( "{\"error\":\"Bad Request for your parameter\",\"errors\":\"parameter is bad: [\\\"Lets try something on this Earth\\\"]\"}")
+
     end
   end
 end
