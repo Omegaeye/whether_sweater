@@ -9,11 +9,11 @@
   },
   "servers": [
     {
-      "url": "http://petstore.swagger.io/v1"
+      "url": "http://localhost:3000/api/v1"
     }
   ],
   "paths": {
-    "/user": {
+    "/users": {
       "get": {
         "summary": "Details about a user",
         "operationId": "listUser",
