@@ -47,7 +47,7 @@ RSpec.describe "Api::V1::Users", type: :request do
     end
 
     context "with invalid parameters" do
-      it "does not create a new Api::V1::User" do
+      it "does not create a new Api::V1::User", :vcr do
         expect {
           post api_v1_users_url,
                 params: invalid_attributes, headers: valid_headers, as: :json
@@ -57,7 +57,7 @@ RSpec.describe "Api::V1::Users", type: :request do
     end
 
     context "with invalid parameters" do
-      it "does not create a new Api::V1::User with no password" do
+      it "does not create a new Api::V1::User with no password", :vcr do
         expect {
           post api_v1_users_url,
                 params: {email: 'jennifer@fake.com', password: '', password_confirmation: 'password'}, headers: valid_headers, as: :json
@@ -65,7 +65,7 @@ RSpec.describe "Api::V1::Users", type: :request do
           expect(response).to have_http_status(:unprocessable_entity)
       end
 
-       it "does not create a new Api::V1::User with no password_confirmation" do
+       it "does not create a new Api::V1::User with no password_confirmation", :vcr do
         expect {
           post api_v1_users_url,
                 params: {email: 'jennifer@fake.com', password: 'password', password_confirmation: ''}, headers: valid_headers, as: :json
@@ -73,20 +73,13 @@ RSpec.describe "Api::V1::Users", type: :request do
           expect(response).to have_http_status(:unprocessable_entity)
       end
 
-      it "does not create a new Api::V1::User if password == password_comfirmation" do
+      it "does not create a new Api::V1::User if password == password_comfirmation", :vcr do
         expect {
           post api_v1_users_url,
                 params: {email: 'jennifer@fake.com', password: 'password', password_confirmation: 'fdafdsaf'}, headers: valid_headers, as: :json
         }.to change(User, :count).by(0)
           expect(response).to have_http_status(:unprocessable_entity)
       end
-
-      # it "does not create a new with wrong data_type" do
-      #   expect {
-      #     post api_v1_users_url,
-      #           params: valid_attributes, headers: invalid_headers }.to change(User, :count).by(0)
-      #     expect(response).to have_http_status(:unprocessable_entity)
-      # end
     end
   end
 end

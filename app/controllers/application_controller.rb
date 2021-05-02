@@ -39,4 +39,5 @@ class ApplicationController < ActionController::API
       return [false, param_bad('location', 'cannot be empty/blank')]
     end
   end
+  
 end

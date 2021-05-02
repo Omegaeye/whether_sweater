@@ -20,7 +20,7 @@ RSpec.describe "Api::V1::Salaries", type: :request do
   }
   describe "GET /salaries" do
     
-    it "returns current hourly and daily weather of the requested city" do
+    it "returns current hourly and daily weather of the requested city", :vcr do
       get '/api/v1/salaries', params: valid_attributes, headers: valid_headers, as: :json
       expect(response).to be_successful
       body = JSON.parse(response.body, symbolize_names: true)
@@ -34,7 +34,7 @@ RSpec.describe "Api::V1::Salaries", type: :request do
       expect(body[:data][:attributes][:salaries].first.keys).to eq(%i[title min max])
     end
 
-     it "returns denver info with destination = fdsafdsafd" do
+     it "returns denver info with destination = fdsafdsafd", :vcr do
       get '/api/v1/salaries', params: invalid_attributes, headers: valid_headers, as: :json
       expect(response).to be_successful
       body = JSON.parse(response.body, symbolize_names: true)
@@ -52,7 +52,7 @@ RSpec.describe "Api::V1::Salaries", type: :request do
     end
 
 
-     it "returns denver info with destination = " do
+     it "returns denver info with destination = ", :vcr do
       get '/api/v1/salaries', params: {}, headers: valid_headers, as: :json
       
       expect(response).to have_http_status(422)

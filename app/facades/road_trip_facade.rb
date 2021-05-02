@@ -27,6 +27,7 @@ class RoadTripFacade
   end
 
   def self.eta_weather(lon, lat, time)
+    #172_800 is distance time in seconds
     if time > 172_800
       daily_weather_info(lon, lat, time)
     else

@@ -8,7 +8,6 @@ class SalariesFacade
             salaries: urban_jobs_salary(location)
          })
     end
-    
 
     def self.urban_jobs_salary(location)
         jobs = ['Data Analyst', 'Data Scientist', 'Mobile Developer', 'QA Engineer', 'Sofware Engineer', 'Systems Administrator', 'Web Developer']
@@ -35,7 +34,5 @@ class SalariesFacade
             summary: weather_info[:current][:weather][0][:description],
             temperature: "#{weather_info[:current][:temp].to_i} F"
          }
-    end
-    
-    
+    end  
 end

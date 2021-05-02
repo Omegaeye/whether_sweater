@@ -61,9 +61,7 @@ RSpec.describe "Api::V1::Sessions", type: :request do
          it "return no auth edge case", :vcr do
             @user = User.create!(valid_attributes)
             @user.api_keys.create!(token: SecureRandom.hex)
-            
             post api_v1_sessions_url, params: '', headers: valid_headers, as: :json
-            
             expect(response).to have_http_status(401)
         end
     end
