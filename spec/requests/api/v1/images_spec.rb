@@ -39,7 +39,7 @@ RSpec.describe "Api::V1::Images", type: :request do
 
     end
 
-    it "returns 404 when given no params" do
+    it "returns 404 when given no params", :vcr do
       get '/api/v1/backgrounds?location=', headers: valid_headers, as: :json
       expect(response).to have_http_status(400)
     end

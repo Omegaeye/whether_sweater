@@ -1,0 +1,551 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.teleport.org/api/cities/?limit=1&search=chicago
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '358'
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - MISS
+      Date:
+      - Wed, 28 Apr 2021 14:55:35 GMT
+      Via:
+      - 1.1 google, 1.1 235fa9476ee502b13c0801d1fa3b57a2.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - zwZJmsZF4j-snF5892kbS-OMdzfvQOaxGHe3TNf5tamSY-c4P9nuzg==
+      Age:
+      - '5'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_embedded":{"city:search-results":[{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/"}},"matching_alternate_names":[{"name":"Chicago"}],"matching_full_name":"Chicago,
+        Illinois, United States"}]},"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/cities/?search=chicago\u0026geohash="}},"count":1}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: https://api.teleport.org/api/cities/geonameid:4887398/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '485'
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - HIT
+      Date:
+      - Wed, 28 Apr 2021 14:55:35 GMT
+      Via:
+      - 1.1 google, 1.1 dcee1124728af441beff75c95d9d9d74.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - KzhTRWw5LAqoM19fr_qnoDvHije9KFn-FOMc_mq8MjKd05wDHcbGXA==
+      Age:
+      - '5'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_links":{"city:admin1_division":{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/admin1_divisions/geonames:IL/","name":"Illinois"},"city:alternate-names":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/alternate_names/"},"city:country":{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/","name":"United
+        States"},"city:timezone":{"href":"https://api.teleport.org/api/timezones/iana:America%2FChicago/","name":"America/Chicago"},"city:urban_area":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/","name":"Chicago"},"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/"}},"full_name":"Chicago,
+        Illinois, United States","geoname_id":4887398,"location":{"geohash":"dp3wj6x4jg19p15jf53w","latlon":{"latitude":41.85003,"longitude":-87.65005}},"name":"Chicago","population":2720546}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: https://api.teleport.org/api/cities/?limit=1&search=chicago
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '358'
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - MISS
+      Date:
+      - Wed, 28 Apr 2021 14:55:35 GMT
+      Via:
+      - 1.1 google, 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - VZg6p1EPkHKwwNF67i6VFXBsSoCuGJ12TIDKF3DMDOPE67xJQ6F3gg==
+      Age:
+      - '5'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_embedded":{"city:search-results":[{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/"}},"matching_alternate_names":[{"name":"Chicago"}],"matching_full_name":"Chicago,
+        Illinois, United States"}]},"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/cities/?search=chicago\u0026geohash="}},"count":1}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: https://api.teleport.org/api/cities/geonameid:4887398/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '485'
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - HIT
+      Date:
+      - Wed, 28 Apr 2021 14:55:35 GMT
+      Via:
+      - 1.1 google, 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - 95IvjfRb-pe1wAtCZQylePBBYQ4py-WvpUaNUMAv23aFaYc3pLvpFw==
+      Age:
+      - '5'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_links":{"city:admin1_division":{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/admin1_divisions/geonames:IL/","name":"Illinois"},"city:alternate-names":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/alternate_names/"},"city:country":{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/","name":"United
+        States"},"city:timezone":{"href":"https://api.teleport.org/api/timezones/iana:America%2FChicago/","name":"America/Chicago"},"city:urban_area":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/","name":"Chicago"},"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/"}},"full_name":"Chicago,
+        Illinois, United States","geoname_id":4887398,"location":{"geohash":"dp3wj6x4jg19p15jf53w","latlon":{"latitude":41.85003,"longitude":-87.65005}},"name":"Chicago","population":2720546}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/onecall?appid=ENV[appid]&exclude=minutely&lat=41.85003&lon=-87.65005&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 28 Apr 2021 14:55:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '17964'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/onecall?exclude=minutely&lat=41.85&lon=-87.65&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":41.85,"lon":-87.65,"timezone":"America/Chicago","timezone_offset":-18000,"current":{"dt":1619621736,"sunrise":1619607025,"sunset":1619657125,"temp":47.23,"feels_like":42.48,"pressure":1013,"humidity":76,"dew_point":40.06,"uvi":3.41,"clouds":90,"visibility":10000,"wind_speed":10.36,"wind_deg":40,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}]},"hourly":[{"dt":1619618400,"temp":47.82,"feels_like":44.49,"pressure":1013,"humidity":79,"dew_point":41.63,"uvi":1.92,"clouds":92,"visibility":10000,"wind_speed":7.16,"wind_deg":6,"wind_gust":9.42,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"pop":0.76,"rain":{"1h":0.23}},{"dt":1619622000,"temp":47.23,"feels_like":41.97,"pressure":1013,"humidity":76,"dew_point":40.06,"uvi":3.41,"clouds":90,"visibility":10000,"wind_speed":11.88,"wind_deg":15,"wind_gust":16.96,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.8},{"dt":1619625600,"temp":47.16,"feels_like":41.85,"pressure":1013,"humidity":79,"dew_point":40.98,"uvi":2.62,"clouds":92,"visibility":10000,"wind_speed":12.01,"wind_deg":23,"wind_gust":19.8,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.83},{"dt":1619629200,"temp":46.87,"feels_like":42.28,"pressure":1013,"humidity":82,"dew_point":41.67,"uvi":3.2,"clouds":94,"visibility":10000,"wind_speed":9.66,"wind_deg":33,"wind_gust":15.59,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.82},{"dt":1619632800,"temp":46.8,"feels_like":42.67,"pressure":1013,"humidity":84,"dew_point":42.22,"uvi":3.37,"clouds":96,"visibility":10000,"wind_speed":8.43,"wind_deg":30,"wind_gust":13.13,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.82},{"dt":1619636400,"temp":46.63,"feels_like":42.17,"pressure":1013,"humidity":84,"dew_point":42.06,"uvi":3.65,"clouds":98,"visibility":10000,"wind_speed":9.22,"wind_deg":21,"wind_gust":14.67,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.15},{"dt":1619640000,"temp":48.09,"feels_like":44.35,"pressure":1013,"humidity":81,"dew_point":42.51,"uvi":2.87,"clouds":100,"visibility":10000,"wind_speed":8.23,"wind_deg":19,"wind_gust":13.06,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.19},{"dt":1619643600,"temp":50.05,"feels_like":48.33,"pressure":1012,"humidity":76,"dew_point":42.62,"uvi":1.88,"clouds":100,"visibility":10000,"wind_speed":8.75,"wind_deg":21,"wind_gust":14.43,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.31},{"dt":1619647200,"temp":50.16,"feels_like":48.4,"pressure":1012,"humidity":75,"dew_point":42.44,"uvi":1.43,"clouds":99,"visibility":10000,"wind_speed":9.55,"wind_deg":34,"wind_gust":15.19,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.31},{"dt":1619650800,"temp":49.05,"feels_like":45.5,"pressure":1013,"humidity":78,"dew_point":42.28,"uvi":0.56,"clouds":99,"visibility":10000,"wind_speed":8.28,"wind_deg":22,"wind_gust":13.71,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.27},{"dt":1619654400,"temp":47.39,"feels_like":43.38,"pressure":1012,"humidity":82,"dew_point":42.03,"uvi":0.14,"clouds":99,"visibility":10000,"wind_speed":8.5,"wind_deg":25,"wind_gust":14.52,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.27},{"dt":1619658000,"temp":46.36,"feels_like":41.97,"pressure":1013,"humidity":85,"dew_point":41.94,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":8.86,"wind_deg":14,"wind_gust":17.52,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"pop":0.32},{"dt":1619661600,"temp":46.2,"feels_like":42.6,"pressure":1012,"humidity":85,"dew_point":41.94,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":7.02,"wind_deg":38,"wind_gust":13.06,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"pop":0.32},{"dt":1619665200,"temp":46.02,"feels_like":41.41,"pressure":1011,"humidity":86,"dew_point":42.01,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":9.19,"wind_deg":19,"wind_gust":16.62,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"pop":0.34},{"dt":1619668800,"temp":45.72,"feels_like":41.25,"pressure":1011,"humidity":86,"dew_point":41.9,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":8.68,"wind_deg":20,"wind_gust":16.93,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"pop":0.45},{"dt":1619672400,"temp":45.54,"feels_like":42.28,"pressure":1010,"humidity":89,"dew_point":42.46,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":6.13,"wind_deg":39,"wind_gust":11.59,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"pop":0.63,"rain":{"1h":0.42}},{"dt":1619676000,"temp":45.32,"feels_like":42.17,"pressure":1010,"humidity":93,"dew_point":43.34,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":5.86,"wind_deg":9,"wind_gust":9.73,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"pop":0.86,"rain":{"1h":0.74}},{"dt":1619679600,"temp":45.3,"feels_like":40.64,"pressure":1010,"humidity":95,"dew_point":44.02,"uvi":0,"clouds":100,"visibility":10000,"wind_speed":8.95,"wind_deg":354,"wind_gust":14.29,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10n"}],"pop":0.98,"rain":{"1h":1.05}},{"dt":1619683200,"temp":45.3,"feels_like":41.25,"pressure":1009,"humidity":96,"dew_point":44.38,"uvi":0,"clouds":100,"visibility":3628,"wind_speed":7.56,"wind_deg":20,"wind_gust":14.18,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10n"}],"pop":1,"rain":{"1h":1.8}},{"dt":1619686800,"temp":45.36,"feels_like":42.01,"pressure":1009,"humidity":96,"dew_point":44.47,"uvi":0,"clouds":100,"visibility":4536,"wind_speed":6.22,"wind_deg":47,"wind_gust":12.75,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10n"}],"pop":1,"rain":{"1h":1.08}},{"dt":1619690400,"temp":45.37,"feels_like":41.31,"pressure":1008,"humidity":97,"dew_point":44.64,"uvi":0,"clouds":100,"visibility":7713,"wind_speed":7.63,"wind_deg":20,"wind_gust":14.54,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"pop":1,"rain":{"1h":0.59}},{"dt":1619694000,"temp":45.79,"feels_like":42.39,"pressure":1009,"humidity":97,"dew_point":45.01,"uvi":0,"clouds":100,"visibility":3434,"wind_speed":6.49,"wind_deg":9,"wind_gust":13.04,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"pop":1,"rain":{"1h":0.63}},{"dt":1619697600,"temp":46.09,"feels_like":42.15,"pressure":1010,"humidity":97,"dew_point":45.34,"uvi":0.03,"clouds":100,"visibility":5195,"wind_speed":7.7,"wind_deg":8,"wind_gust":15.01,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"pop":0.98,"rain":{"1h":1.84}},{"dt":1619701200,"temp":46.2,"feels_like":42.1,"pressure":1010,"humidity":96,"dew_point":45.19,"uvi":0.11,"clouds":100,"visibility":9393,"wind_speed":8.1,"wind_deg":17,"wind_gust":16.64,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"pop":0.98,"rain":{"1h":1.09}},{"dt":1619704800,"temp":46.27,"feels_like":42.42,"pressure":1010,"humidity":96,"dew_point":45.19,"uvi":0.26,"clouds":100,"visibility":10000,"wind_speed":7.58,"wind_deg":11,"wind_gust":14.67,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"pop":1,"rain":{"1h":0.28}},{"dt":1619708400,"temp":46.33,"feels_like":42.4,"pressure":1010,"humidity":95,"dew_point":45.01,"uvi":0.46,"clouds":100,"visibility":10000,"wind_speed":7.76,"wind_deg":14,"wind_gust":14.54,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"pop":1,"rain":{"1h":0.3}},{"dt":1619712000,"temp":47.73,"feels_like":44.17,"pressure":1010,"humidity":91,"dew_point":45.43,"uvi":0.39,"clouds":100,"visibility":10000,"wind_speed":7.63,"wind_deg":359,"wind_gust":12.66,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.8},{"dt":1619715600,"temp":47.82,"feels_like":44.65,"pressure":1010,"humidity":91,"dew_point":45.46,"uvi":0.47,"clouds":100,"visibility":10000,"wind_speed":6.8,"wind_deg":5,"wind_gust":11.18,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"pop":0.99,"rain":{"1h":0.27}},{"dt":1619719200,"temp":49.8,"feels_like":47.17,"pressure":1010,"humidity":86,"dew_point":45.75,"uvi":0.5,"clouds":100,"visibility":10000,"wind_speed":6.53,"wind_deg":348,"wind_gust":10.65,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.77},{"dt":1619722800,"temp":52.95,"feels_like":51.62,"pressure":1010,"humidity":78,"dew_point":46.17,"uvi":1.24,"clouds":100,"visibility":10000,"wind_speed":4.88,"wind_deg":10,"wind_gust":8.5,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.09},{"dt":1619726400,"temp":53.92,"feels_like":52.54,"pressure":1010,"humidity":75,"dew_point":46.11,"uvi":0.98,"clouds":99,"visibility":10000,"wind_speed":5.57,"wind_deg":4,"wind_gust":9.22,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.05},{"dt":1619730000,"temp":51.73,"feels_like":50.36,"pressure":1010,"humidity":80,"dew_point":45.79,"uvi":0.64,"clouds":100,"visibility":10000,"wind_speed":5.48,"wind_deg":6,"wind_gust":8.88,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.01},{"dt":1619733600,"temp":52.61,"feels_like":51.24,"pressure":1010,"humidity":78,"dew_point":45.75,"uvi":1.05,"clouds":95,"visibility":10000,"wind_speed":4.65,"wind_deg":350,"wind_gust":9.55,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0.01},{"dt":1619737200,"temp":55.26,"feels_like":53.82,"pressure":1011,"humidity":71,"dew_point":45.54,"uvi":0.42,"clouds":78,"visibility":10000,"wind_speed":3.22,"wind_deg":321,"wind_gust":9.48,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"pop":0.01},{"dt":1619740800,"temp":54.43,"feels_like":53.04,"pressure":1011,"humidity":74,"dew_point":45.99,"uvi":0.11,"clouds":72,"visibility":10000,"wind_speed":1.66,"wind_deg":172,"wind_gust":5.53,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"pop":0.01},{"dt":1619744400,"temp":52.05,"feels_like":50.81,"pressure":1011,"humidity":82,"dew_point":46.78,"uvi":0,"clouds":15,"visibility":10000,"wind_speed":3.04,"wind_deg":223,"wind_gust":5.44,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"pop":0.38,"rain":{"1h":0.12}},{"dt":1619748000,"temp":52.3,"feels_like":51.19,"pressure":1012,"humidity":84,"dew_point":47.5,"uvi":0,"clouds":16,"visibility":10000,"wind_speed":5.01,"wind_deg":271,"wind_gust":15.77,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10n"}],"pop":0.38,"rain":{"1h":0.12}},{"dt":1619751600,"temp":53.44,"feels_like":52.25,"pressure":1012,"humidity":80,"dew_point":47.41,"uvi":0,"clouds":13,"visibility":10000,"wind_speed":10.85,"wind_deg":307,"wind_gust":23.94,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0.38},{"dt":1619755200,"temp":53.11,"feels_like":51.84,"pressure":1013,"humidity":79,"dew_point":46.98,"uvi":0,"clouds":10,"visibility":10000,"wind_speed":13.04,"wind_deg":322,"wind_gust":26.04,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0.31},{"dt":1619758800,"temp":51.69,"feels_like":50.32,"pressure":1015,"humidity":80,"dew_point":45.72,"uvi":0,"clouds":8,"visibility":10000,"wind_speed":13.53,"wind_deg":333,"wind_gust":25.34,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0.17},{"dt":1619762400,"temp":49.15,"feels_like":43.95,"pressure":1016,"humidity":81,"dew_point":43.56,"uvi":0,"clouds":11,"visibility":10000,"wind_speed":13.44,"wind_deg":342,"wind_gust":24.94,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0.16},{"dt":1619766000,"temp":46.83,"feels_like":41.7,"pressure":1016,"humidity":78,"dew_point":40.28,"uvi":0,"clouds":9,"visibility":10000,"wind_speed":11.16,"wind_deg":341,"wind_gust":24.27,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1619769600,"temp":45.9,"feels_like":41.02,"pressure":1017,"humidity":76,"dew_point":38.86,"uvi":0,"clouds":5,"visibility":10000,"wind_speed":9.8,"wind_deg":336,"wind_gust":22.55,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1619773200,"temp":45.18,"feels_like":40.44,"pressure":1017,"humidity":75,"dew_point":37.6,"uvi":0,"clouds":5,"visibility":10000,"wind_speed":9.04,"wind_deg":337,"wind_gust":21.47,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1619776800,"temp":44.69,"feels_like":40.39,"pressure":1018,"humidity":73,"dew_point":36.52,"uvi":0,"clouds":4,"visibility":10000,"wind_speed":7.83,"wind_deg":326,"wind_gust":20,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1619780400,"temp":44.49,"feels_like":40.44,"pressure":1018,"humidity":71,"dew_point":35.49,"uvi":0,"clouds":3,"visibility":10000,"wind_speed":7.2,"wind_deg":316,"wind_gust":17.2,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1619784000,"temp":45.34,"feels_like":40.84,"pressure":1020,"humidity":67,"dew_point":34.9,"uvi":0.25,"clouds":2,"visibility":10000,"wind_speed":8.55,"wind_deg":315,"wind_gust":18.28,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1619787600,"temp":47.34,"feels_like":42.93,"pressure":1020,"humidity":59,"dew_point":33.51,"uvi":0.89,"clouds":6,"visibility":10000,"wind_speed":9.46,"wind_deg":325,"wind_gust":18.1,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0}],"daily":[{"dt":1619629200,"sunrise":1619607025,"sunset":1619657125,"moonrise":1619665500,"moonset":1619610960,"moon_phase":0.56,"temp":{"day":46.87,"min":45.72,"max":59.56,"night":45.72,"eve":49.05,"morn":50.31},"feels_like":{"day":42.28,"night":49.32,"eve":45.5,"morn":49.32},"pressure":1013,"humidity":82,"dew_point":41.67,"wind_speed":12.01,"wind_deg":23,"wind_gust":19.8,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":94,"pop":1,"rain":3.14,"uvi":3.65},{"dt":1619715600,"sunrise":1619693343,"sunset":1619743591,"moonrise":1619756520,"moonset":1619699880,"moon_phase":0.6,"temp":{"day":47.82,"min":45.3,"max":55.26,"night":53.11,"eve":55.26,"morn":45.79},"feels_like":{"day":44.65,"night":42.39,"eve":53.82,"morn":42.39},"pressure":1010,"humidity":91,"dew_point":45.46,"wind_speed":13.04,"wind_deg":322,"wind_gust":26.04,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":10.33,"uvi":1.24},{"dt":1619802000,"sunrise":1619779663,"sunset":1619830058,"moonrise":0,"moonset":1619789280,"moon_phase":0.64,"temp":{"day":53.33,"min":44.49,"max":53.33,"night":47.77,"eve":49.93,"morn":44.49},"feels_like":{"day":50.52,"night":40.44,"eve":47.08,"morn":40.44},"pressure":1021,"humidity":46,"dew_point":31.84,"wind_speed":13.53,"wind_deg":333,"wind_gust":25.34,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":20,"pop":0.17,"uvi":6.59},{"dt":1619888400,"sunrise":1619865984,"sunset":1619916524,"moonrise":1619847000,"moonset":1619879280,"moon_phase":0.68,"temp":{"day":67.84,"min":47.93,"max":72.55,"night":65.53,"eve":69.15,"morn":49.06},"feels_like":{"day":66.58,"night":44.37,"eve":68.49,"morn":44.37},"pressure":1010,"humidity":48,"dew_point":47.5,"wind_speed":21.03,"wind_deg":214,"wind_gust":35.86,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":73,"pop":0,"uvi":6.5},{"dt":1619974800,"sunrise":1619952306,"sunset":1620002990,"moonrise":1619936940,"moonset":1619969580,"moon_phase":0.71,"temp":{"day":72.59,"min":59.72,"max":74.79,"night":65.88,"eve":70.84,"morn":59.72},"feels_like":{"day":71.91,"night":59.05,"eve":70.45,"morn":59.05},"pressure":1002,"humidity":50,"dew_point":52.61,"wind_speed":15.88,"wind_deg":229,"wind_gust":32.61,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":100,"pop":0.32,"rain":0.15,"uvi":0.3},{"dt":1620061200,"sunrise":1620038629,"sunset":1620089456,"moonrise":1620026100,"moonset":1620060120,"moon_phase":0.75,"temp":{"day":46.26,"min":44.53,"max":63.73,"night":44.53,"eve":44.71,"morn":60.42},"feels_like":{"day":40.78,"night":60.67,"eve":37.67,"morn":60.67},"pressure":1003,"humidity":93,"dew_point":44.31,"wind_speed":15.7,"wind_deg":348,"wind_gust":28.12,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":25.83,"uvi":1},{"dt":1620147600,"sunrise":1620124954,"sunset":1620175922,"moonrise":1620114720,"moonset":1620150600,"moon_phase":0.78,"temp":{"day":50.65,"min":44.33,"max":52.11,"night":46.9,"eve":49.98,"morn":45.14},"feels_like":{"day":48.15,"night":38.66,"eve":45.12,"morn":38.66},"pressure":1011,"humidity":58,"dew_point":35.71,"wind_speed":15.66,"wind_deg":12,"wind_gust":27.18,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":98,"pop":0.32,"uvi":1},{"dt":1620234000,"sunrise":1620211280,"sunset":1620262387,"moonrise":1620202980,"moonset":1620240960,"moon_phase":0.81,"temp":{"day":56.3,"min":44.94,"max":57.22,"night":51.15,"eve":54.14,"morn":46.06},"feels_like":{"day":53.6,"night":43.72,"eve":51.31,"morn":43.72},"pressure":1020,"humidity":42,"dew_point":31.33,"wind_speed":7.27,"wind_deg":61,"wind_gust":10.38,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":53,"pop":0,"uvi":1}]}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: https://api.teleport.org/api/cities/?limit=1&search=chicago
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '358'
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - MISS
+      Date:
+      - Wed, 28 Apr 2021 14:55:35 GMT
+      Via:
+      - 1.1 google, 1.1 4b2d2d4c49521bf403522140b78283a1.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - tZDy_TqUgJkY1FJcBLt9xjPL2rolyk6GiT7f-N910JgGWG9E02yZBQ==
+      Age:
+      - '6'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_embedded":{"city:search-results":[{"_links":{"city:item":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/"}},"matching_alternate_names":[{"name":"Chicago"}],"matching_full_name":"Chicago,
+        Illinois, United States"}]},"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/cities/?search=chicago\u0026geohash="}},"count":1}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: https://api.teleport.org/api/cities/geonameid:4887398/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '485'
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - HIT
+      Date:
+      - Wed, 28 Apr 2021 14:55:35 GMT
+      Via:
+      - 1.1 google, 1.1 9204cf44179493ed42c678800a26918b.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - 4REdOD4VOqYw4SmZAeXFTs3t7Fke2NVBY62PyDIzNwea_Opt-ZYhCw==
+      Age:
+      - '6'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_links":{"city:admin1_division":{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/admin1_divisions/geonames:IL/","name":"Illinois"},"city:alternate-names":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/alternate_names/"},"city:country":{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/","name":"United
+        States"},"city:timezone":{"href":"https://api.teleport.org/api/timezones/iana:America%2FChicago/","name":"America/Chicago"},"city:urban_area":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/","name":"Chicago"},"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/"}},"full_name":"Chicago,
+        Illinois, United States","geoname_id":4887398,"location":{"geohash":"dp3wj6x4jg19p15jf53w","latlon":{"latitude":41.85003,"longitude":-87.65005}},"name":"Chicago","population":2720546}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: https://api.teleport.org/api/urban_areas/slug:chicago/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '610'
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - HIT
+      Date:
+      - Wed, 28 Apr 2021 14:55:36 GMT
+      Via:
+      - 1.1 google, 1.1 2c861897aa9389c1f47299b6fea5b59d.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - DnHWg2H3BvG6Pxf6sxGKO8G-48_UTov8dG_USpVt2gCZCGdJFfC21w==
+      Age:
+      - '5'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/"},"ua:admin1-divisions":[{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/admin1_divisions/geonames:IL/","name":"Illinois"},{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/admin1_divisions/geonames:IN/","name":"Indiana"}],"ua:cities":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/cities/"},"ua:continent":{"href":"https://api.teleport.org/api/continents/geonames:NA/","name":"North
+        America"},"ua:countries":[{"href":"https://api.teleport.org/api/countries/iso_alpha2:US/","name":"United
+        States"}],"ua:details":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/details/"},"ua:identifying-city":{"href":"https://api.teleport.org/api/cities/geonameid:4887398/","name":"Chicago"},"ua:images":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/images/"},"ua:primary-cities":[{"href":"https://api.teleport.org/api/cities/geonameid:4887398/","name":"Chicago"}],"ua:salaries":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/salaries/"},"ua:scores":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/scores/"}},"bounding_box":{"latlon":{"east":-87.066,"north":42.297,"south":41.339,"west":-88.505}},"continent":"North
+        America","full_name":"Chicago, Illinois","is_government_partner":false,"mayor":"Rahm
+        Emanuel","name":"Chicago","slug":"chicago","teleport_city_url":"https://teleport.org/cities/chicago/","ua_id":"dp3wn"}'
+  recorded_at: Wed, 28 Apr 2021 14:55:40 GMT
+- request:
+    method: get
+    uri: https://api.teleport.org/api/urban_areas/slug:chicago/salaries/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - nginx
+      X-Apiproxy-Cache-Status:
+      - MISS
+      Date:
+      - Wed, 28 Apr 2021 14:55:36 GMT
+      Via:
+      - 1.1 google, 1.1 e1b5abb53c407f0a057625c46693461d.cloudfront.net (CloudFront)
+      Vary:
+      - Origin,Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - ccglxj9HcrTFmgguhtq7dFdezc-Wp0Kmvmj6Z4RF-ONiNODMz2Eyqg==
+      Age:
+      - '5'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/urban_areas/slug:chicago/salaries/"}},"salaries":[{"job":{"id":"ACCOUNT-MANAGER","title":"Account
+        Manager"},"salary_percentiles":{"percentile_25":53732.4997858553,"percentile_50":67273.75507905365,"percentile_75":84227.57438186172}},{"job":{"id":"ACCOUNTANT","title":"Accountant"},"salary_percentiles":{"percentile_25":47248.90878754866,"percentile_50":56113.363186966664,"percentile_75":66640.89412753156}},{"job":{"id":"ADMINISTRATIVE-ASSISTANT","title":"Administrative
+        Assistant"},"salary_percentiles":{"percentile_25":34905.11247717241,"percentile_50":42036.17141703129,"percentile_75":50624.09435172754}},{"job":{"id":"ARCHITECT","title":"Architect"},"salary_percentiles":{"percentile_25":60760.551047334375,"percentile_50":75238.00314257151,"percentile_75":93165.00623030383}},{"job":{"id":"ATTORNEY","title":"Attorney"},"salary_percentiles":{"percentile_25":63082.25543040567,"percentile_50":85188.03908577877,"percentile_75":115040.30656111092}},{"job":{"id":"BUSINESS-ANALYST","title":"Business
+        Analyst"},"salary_percentiles":{"percentile_25":54572.039749621006,"percentile_50":65463.78129104603,"percentile_75":78529.34727351235}},{"job":{"id":"BUSINESS-DEVELOPMENT","title":"Business
+        Development"},"salary_percentiles":{"percentile_25":58868.70108855463,"percentile_50":77992.50894101878,"percentile_75":103328.78657819632}},{"job":{"id":"C-LEVEL-EXECUTIVE","title":"C
+        Level Executive"},"salary_percentiles":{"percentile_25":113224.23074482982,"percentile_50":169752.04555186332,"percentile_75":254501.68024531004}},{"job":{"id":"CASHIER","title":"Cashier"},"salary_percentiles":{"percentile_25":21812.61822168686,"percentile_50":30558.38381953057,"percentile_75":42810.76265907945}},{"job":{"id":"CHEF","title":"Chef"},"salary_percentiles":{"percentile_25":33922.10804645942,"percentile_50":41665.604781025446,"percentile_75":51176.73168751686}},{"job":{"id":"CHEMICAL-ENGINEER","title":"Chemical
+        Engineer"},"salary_percentiles":{"percentile_25":64799.938629398,"percentile_50":78520.54849359932,"percentile_75":95146.33294634895}},{"job":{"id":"CIVIL-ENGINEER","title":"Civil
+        Engineer"},"salary_percentiles":{"percentile_25":75046.79203102979,"percentile_50":89467.74100530887,"percentile_75":106659.81135187489}},{"job":{"id":"CONTENT-MARKETING","title":"Content
+        Marketing"},"salary_percentiles":{"percentile_25":39402.36738857876,"percentile_50":49333.79507025396,"percentile_75":61768.4544695476}},{"job":{"id":"COPYWRITER","title":"Copywriter"},"salary_percentiles":{"percentile_25":37874.33329144154,"percentile_50":46571.95367417419,"percentile_75":57266.9319969137}},{"job":{"id":"CUSTOMER-SUPPORT","title":"Customer
+        Support"},"salary_percentiles":{"percentile_25":28709.782495494794,"percentile_50":36911.39045392457,"percentile_75":47455.97586661874}},{"job":{"id":"DATA-ANALYST","title":"Data
+        Analyst"},"salary_percentiles":{"percentile_25":46898.18614517015,"percentile_50":56442.498784333024,"percentile_75":67929.18726447425}},{"job":{"id":"DATA-SCIENTIST","title":"Data
+        Scientist"},"salary_percentiles":{"percentile_25":71025.60310363481,"percentile_50":85799.94207526707,"percentile_75":103647.55438088557}},{"job":{"id":"DENTIST","title":"Dentist"},"salary_percentiles":{"percentile_25":96511.24909217832,"percentile_50":125690.57152330533,"percentile_75":163692.00397319777}},{"job":{"id":"ELECTRICAL-ENGINEER","title":"Electrical
+        Engineer"},"salary_percentiles":{"percentile_25":59916.38674346041,"percentile_50":71433.42639972051,"percentile_75":85164.25446434696}},{"job":{"id":"EXECUTIVE-ASSISTANT","title":"Executive
+        Assistant"},"salary_percentiles":{"percentile_25":45674.4959297919,"percentile_50":55243.43643899304,"percentile_75":66817.09797695777}},{"job":{"id":"FASHION-DESIGNER","title":"Fashion
+        Designer"},"salary_percentiles":{"percentile_25":32117.744775095885,"percentile_50":41461.36995405689,"percentile_75":53523.22245863665}},{"job":{"id":"FINANCE-MANAGER","title":"Finance
+        Manager"},"salary_percentiles":{"percentile_25":69940.67285399696,"percentile_50":88349.59042039038,"percentile_75":111603.87524073782}},{"job":{"id":"FINANCIAL-ANALYST","title":"Financial
+        Analyst"},"salary_percentiles":{"percentile_25":59832.26928250057,"percentile_50":69632.27825690183,"percentile_75":81037.44406473168}},{"job":{"id":"GRAPHIC-DESIGNER","title":"Graphic
+        Designer"},"salary_percentiles":{"percentile_25":36203.161400833036,"percentile_50":43108.832136571385,"percentile_75":51331.74386633341}},{"job":{"id":"HARDWARE-ENGINEER","title":"Hardware
+        Engineer"},"salary_percentiles":{"percentile_25":52769.250831976795,"percentile_50":64112.11752642755,"percentile_75":77893.15840034031}},{"job":{"id":"HUMAN-RESOURCES-MANAGER","title":"Human
+        Resources Manager"},"salary_percentiles":{"percentile_25":65243.635415043165,"percentile_50":79672.03299727192,"percentile_75":97291.21931263225}},{"job":{"id":"IT-MANAGER","title":"IT
+        Manager"},"salary_percentiles":{"percentile_25":82165.02950974903,"percentile_50":100683.11130015366,"percentile_75":123374.73693569774}},{"job":{"id":"INDUSTRIAL-DESIGNER","title":"Industrial
+        Designer"},"salary_percentiles":{"percentile_25":50723.55629564521,"percentile_50":62310.615118063666,"percentile_75":76544.56903142652}},{"job":{"id":"INTERIOR-DESIGNER","title":"Interior
+        Designer"},"salary_percentiles":{"percentile_25":45676.209755777396,"percentile_50":55113.99852282833,"percentile_75":66501.85839445918}},{"job":{"id":"LECTURER","title":"Lecturer"},"salary_percentiles":{"percentile_25":52982.09346223906,"percentile_50":65286.9730550912,"percentile_75":80449.61178693434}},{"job":{"id":"MARKETING-MANAGER","title":"Marketing
+        Manager"},"salary_percentiles":{"percentile_25":57315.3210589627,"percentile_50":71989.48240231263,"percentile_75":90420.59750867376}},{"job":{"id":"MECHANICAL-ENGINEER","title":"Mechanical
+        Engineer"},"salary_percentiles":{"percentile_25":57877.02085967939,"percentile_50":67858.69424034467,"percentile_75":79561.84191250536}},{"job":{"id":"MOBILE-DEVELOPER","title":"Mobile
+        Developer"},"salary_percentiles":{"percentile_25":50649.8712176599,"percentile_50":63346.924835957834,"percentile_75":79226.91192891626}},{"job":{"id":"NURSE","title":"Nurse"},"salary_percentiles":{"percentile_25":58312.05327272678,"percentile_50":64870.5140355594,"percentile_75":72166.61659221533}},{"job":{"id":"OFFICE-MANAGER","title":"Office
+        Manager"},"salary_percentiles":{"percentile_25":39304.92420450415,"percentile_50":48053.025011263024,"percentile_75":58748.191466260585}},{"job":{"id":"OPERATIONS-MANAGER","title":"Operations
+        Manager"},"salary_percentiles":{"percentile_25":50879.20738902692,"percentile_50":64844.4031674673,"percentile_75":82642.73045754815}},{"job":{"id":"PHARMACIST","title":"Pharmacist"},"salary_percentiles":{"percentile_25":94472.47605241014,"percentile_50":105244.23766919838,"percentile_75":117244.19667402313}},{"job":{"id":"PHYSICIAN","title":"Physician"},"salary_percentiles":{"percentile_25":110646.51142650044,"percentile_50":150751.58858520782,"percentile_75":205393.2037076476}},{"job":{"id":"POSTDOCTORAL-RESEARCHER","title":"Postdoctoral
+        Researcher"},"salary_percentiles":{"percentile_25":48274.38015980691,"percentile_50":54596.85247930749,"percentile_75":61747.37595344791}},{"job":{"id":"PRODUCT-MANAGER","title":"Product
+        Manager"},"salary_percentiles":{"percentile_25":70496.60571717432,"percentile_50":86631.88545667395,"percentile_75":106460.2118276156}},{"job":{"id":"PROJECT-MANAGER","title":"Project
+        Manager"},"salary_percentiles":{"percentile_25":61577.92615845636,"percentile_50":76115.02975462301,"percentile_75":94084.0024335821}},{"job":{"id":"QA-ENGINEER","title":"QA
+        Engineer"},"salary_percentiles":{"percentile_25":46022.824981352605,"percentile_50":56733.428314123645,"percentile_75":69936.64316734018}},{"job":{"id":"RECEPTIONIST","title":"Receptionist"},"salary_percentiles":{"percentile_25":31773.44476169944,"percentile_50":38482.94570787393,"percentile_75":46609.27140453885}},{"job":{"id":"RESEARCH-SCIENTIST","title":"Research
+        Scientist"},"salary_percentiles":{"percentile_25":46211.44680158965,"percentile_50":59225.48088797975,"percentile_75":75904.51780210856}},{"job":{"id":"SALES-MANAGER","title":"Sales
+        Manager"},"salary_percentiles":{"percentile_25":62723.70473367223,"percentile_50":82899.7616965144,"percentile_75":109565.76175656845}},{"job":{"id":"SOFTWARE-ENGINEER","title":"Software
+        Engineer"},"salary_percentiles":{"percentile_25":67646.2253013339,"percentile_50":82451.1152192146,"percentile_75":100496.16768133474}},{"job":{"id":"SYSTEMS-ADMINISTRATOR","title":"Systems
+        Administrator"},"salary_percentiles":{"percentile_25":54967.079284456646,"percentile_50":66153.69042177942,"percentile_75":79616.94187484588}},{"job":{"id":"TEACHER","title":"Teacher"},"salary_percentiles":{"percentile_25":39113.53791673373,"percentile_50":48375.53632818964,"percentile_75":59830.7552751142}},{"job":{"id":"UX-DESIGNER","title":"UX
+        Designer"},"salary_percentiles":{"percentile_25":57210.412719627224,"percentile_50":70148.37349965962,"percentile_75":86012.21474774585}},{"job":{"id":"WAITER","title":"Waiter"},"salary_percentiles":{"percentile_25":19389.074535197138,"percentile_50":29677.96887062652,"percentile_75":45426.70846341771}},{"job":{"id":"WEB-DESIGNER","title":"Web
+        Designer"},"salary_percentiles":{"percentile_25":39266.41094306577,"percentile_50":48047.17730025475,"percentile_75":58791.50121128626}},{"job":{"id":"WEB-DEVELOPER","title":"Web
+        Developer"},"salary_percentiles":{"percentile_25":53704.53793049536,"percentile_50":66545.38666217329,"percentile_75":82456.50473241684}}]}'
+  recorded_at: Wed, 28 Apr 2021 14:55:41 GMT
+recorded_with: VCR 6.0.0

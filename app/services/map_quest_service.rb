@@ -15,7 +15,7 @@ class MapQuestService
         f.params['from'] = from
         f.params['to'] = to
       end 
-    
+
       return [false,'You will need a jetpack for that route'] if parse(response)[:info][:statuscode] == 402 || parse(response)[:info][:statuscode] == 500
       parse(response)[:route]   
     end 
