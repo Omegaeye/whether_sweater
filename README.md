@@ -8,7 +8,7 @@
 - **Khoa Nguyen**   
         
   * <img src="https://user-images.githubusercontent.com/46826902/114424033-fb538b00-9b74-11eb-884d-429d4ad4132d.png"> - https://github.com/Omegaeye
-  * <img src="https://user-images.githubusercontent.com/46826902/114425392-43bf7880-9b76-11eb-811a-d3255ced4b3b.png">
+  * <img src="https://user-images.githubusercontent.com/46826902/114425392-43bf7880-9b76-11eb-811a-d3255ced4b3b.png"> 
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@
 ### GemFile/Dependency
 
  <img src="https://user-images.githubusercontent.com/46826902/116293329-ffc29b00-a753-11eb-8034-37b456906e41.png" width="75%" height="50%">
-
+hi
 
 ### Prerequisites
 
