@@ -13,3 +13,5 @@ jobs:
           name: whether_sweater
           command: bundle -v
       - ruby/bundle-install
+      - store_test)results:
+        path: spec
