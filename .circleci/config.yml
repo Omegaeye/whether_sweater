@@ -6,8 +6,9 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.5.3-stretch-node
-    environment:
-      TEST_REPORTS: /tmp/test-reports
+      - image: postgres:9.4.1
+        environment:
+          POSTGRES_USER: root
     executor: ruby/default
     steps:
       - checkout
@@ -15,6 +16,10 @@ jobs:
           name: whether_sweater
           command: bundle -v
       - ruby/bundle-install
+
+      - run: |
+          sudo -u root createuser -h localhost --superuser ubuntu &&
+          sudo createdb -h localhost test_db
 
       - checkout
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
