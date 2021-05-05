@@ -6,6 +6,8 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.5.3-stretch-node
+    environment:
+      TEST_REPORTS: /tmp/test-reports
     executor: ruby/default
     steps:
       - checkout
@@ -13,5 +15,9 @@ jobs:
           name: whether_sweater
           command: bundle -v
       - ruby/bundle-install
-      - store_test)results:
-        path: spec
+
+      - run: |
+          sudo createdb -h localhost test_db
+    
+      - store_test_results: 
+        path: /tmp/test_reports
