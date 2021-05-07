@@ -7,9 +7,13 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.3-stretch-node
 
-      - image: host:localhost
+      - image: circleci/postgres:13.2
+        auth:
+          username: kn
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
-          POSTGRES_USER: 'kn'
+          POSTGRES_USER: root
+          POSTGRES_DB: circle-test_test
     executor: ruby/default
     steps:
       - checkout
