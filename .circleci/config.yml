@@ -7,10 +7,9 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.3-stretch-node
 
-      - image: psql 13.2
+      - image: circleci/postgres:13.2
         environment:
           POSTGRES_USER: 'kn'
-          port: 5432
     executor: ruby/default
     steps:
       - checkout
