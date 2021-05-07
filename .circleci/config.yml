@@ -4,17 +4,18 @@ orbs:
 
 jobs:
   build:
+    working_directory: ~/whether_sweater
     docker:
-      - image: circleci/ruby:2.5.3-stretch-node
-
-      - image: circleci/postgres:13.2
-        auth:
-          username: kn
-          password: POSTGRES_HOST_AUTH_METHOD=trust
+      - image: circleci/ruby:2.5.3
         environment:
-          POSTGRES_USER: root
-          POSTGRES_DB: circle-test_test
-    executor: ruby/default
+          PGHOST: localhost
+          PGUSER: whether_sweater
+          RAILS_ENV: test
+      - image: postgres:13.2
+        environment:
+          POSTGRES_USER: whether_sweater
+          POSTGRES_DB: whether_sweater_test
+          POSTGRES_PASSWORD: ""
     steps:
       - checkout
       - run:
