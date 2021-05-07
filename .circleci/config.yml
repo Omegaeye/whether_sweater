@@ -9,6 +9,8 @@ jobs:
       - image: circleci/ruby:2.5.3
         environment:
           PGHOST: localhost
+          DB_HOST: 127.0.0.1
+          PG_HOST: 127.0.0.1
           PGUSER: whether_sweater
           RAILS_ENV: test
       - image: circleci/postgres:13.2
