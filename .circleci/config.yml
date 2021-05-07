@@ -29,8 +29,7 @@ jobs:
       - run:
           name: Database Setup
           command:
-            bundle exec rake db:create
-            bundle exec rake db:structure:load
+            bundle exec rake db:{create migrate}
       - run: mkdir ~/rspec
       - run:
           command: bundle exec rspec
