@@ -10,7 +10,7 @@ jobs:
       - image: circleci/postgres:13.2
         auth:
           username: kn
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          password: POSTGRES_HOST_AUTH_METHOD=trust
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: circle-test_test
