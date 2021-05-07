@@ -9,14 +9,13 @@ jobs:
       - image: circleci/ruby:2.5.3
         environment:
           PGHOST: localhost
-          DB_HOST: 127.0.0.1
-          PG_HOST: 127.0.0.1
-          PGUSER: whether_sweater
+          PGUSER: sweater_weather
           RAILS_ENV: test
-      - image: circleci/postgres:13.2
+      - image: postgres:13.2
         environment:
-          POSTGRES_USER: kn 
-          POSTGRES_DB: whether_sweater_test
+          POSTGRES_USER: sweater_weather
+          POSTGRES_DB: sweater_weather_test
+          POSTGRES_PASSWORD: "POSTGRES_HOST_AUTH_METHOD=trust"
     steps:
       - checkout
       - run:
