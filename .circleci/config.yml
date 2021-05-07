@@ -7,7 +7,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.3-stretch-node
 
-      - image: circleci/postgres:13.2
+      - image: host:localhost
         environment:
           POSTGRES_USER: 'kn'
     executor: ruby/default
