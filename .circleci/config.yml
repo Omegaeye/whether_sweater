@@ -11,11 +11,10 @@ jobs:
           PGHOST: localhost
           PGUSER: whether_sweater
           RAILS_ENV: test
-      - image: postgres:13.2
+      - image: circleci/postgres:13.2
         environment:
-          POSTGRES_USER: whether_sweater
+          POSTGRES_USER: kn 
           POSTGRES_DB: whether_sweater_test
-          POSTGRES_PASSWORD: ""
     steps:
       - checkout
       - run:
